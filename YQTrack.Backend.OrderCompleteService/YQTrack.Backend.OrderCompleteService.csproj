@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F9B8157E-62D0-45AF-81E8-261931E77A9F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YQTrack.Backend.OrderCompleteService</RootNamespace>
+    <AssemblyName>YQTrack.Backend.OrderCompleteService</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\YQTrack.Backend.OrderCompleteService.HostRun\bin\Debug\Run\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\YQTrack.Backend.OrderCompleteService.HostRun\bin\Release\Run\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YQTrack.Backend.BaseBLL">
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.BaseBLL.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.BaseModel">
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.BaseModel.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.BaseRepository">
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.BaseRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.ElasticSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.ElasticSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.Enums">
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.Enums.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.Factory">
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.Factory.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.FullTextIndexHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.FullTextIndexHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.GlobalDefinitions">
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.GlobalDefinitions.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.Message.Model">
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.Message.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.Message.RabbitMQHelper">
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.Message.RabbitMQHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.Models">
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.OrderComplete.Model">
+      <HintPath>..\YQTrack.Backend.OrderComplete.Model\bin\Debug\YQTrack.Backend.OrderComplete.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.Seller.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.Seller.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.Seller.MQData.Helper">
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.Seller.MQData.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrack.Backend.Sharding, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrack.Backend.Sharding.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrackV6.Common">
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrackV6.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrackV6.DapperExtension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrackV6.DapperExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="YQTrackV6.Log">
+      <HintPath>..\..\..\..\YQTrack.Backend.Release\_Common\YQTrackV6.Log.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EmailMessageModel.cs" />
+    <Compile Include="OrderAutoArchivedService.cs" />
+    <Compile Include="OrderAutoWarnService.cs" />
+    <Compile Include="OrderAutoCompleteService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SellerTrackNumAutoWarnService.cs" />
+    <Compile Include="UserMemberExpiresWarnService.cs" />
+    <Compile Include="V2\CommonHelper.cs" />
+    <Compile Include="V2\Complate\AutoOrderComplateWorkService.cs" />
+    <Compile Include="V2\Complate\BaseSellerOrderComplateWorkService.cs" />
+    <Compile Include="V2\Complate\MQSellerOrderComplateWorkService.cs" />
+    <Compile Include="V2\Complate\RandomSellerOrderComplateWorkService.cs" />
+    <Compile Include="V2\Warn\BuyerWarnWorkService.cs" />
+    <Compile Include="V2\Warn\SellerTrackNumAutoWarnWorkService.cs" />
+    <Compile Include="V2\Warn\SellerWarnWorkService.cs" />
+    <Compile Include="V2\Warn\UserMemberExpiresWarnWorkService.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\0.1-Core\YQTrack.Backend.OrderComplete.Framework\YQTrack.Backend.OrderComplete.Framework.csproj">
+      <Project>{8af17570-9ad3-4ff9-b548-688ff9cff66a}</Project>
+      <Name>YQTrack.Backend.OrderComplete.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.1-Core\YQTrack.Backend.OrderComplete.MQHelpr\YQTrack.Backend.OrderComplete.MQHelpr.csproj">
+      <Project>{73c4b2f7-9a4d-41a3-a246-ccc8d8b5dc7f}</Project>
+      <Name>YQTrack.Backend.OrderComplete.MQHelpr</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.2-DAL\YQTrack.Backend.OrderComplete.Entity\YQTrack.Backend.OrderComplete.Entity.csproj">
+      <Project>{1868796b-c45f-44a0-89ef-84d5267e1d55}</Project>
+      <Name>YQTrack.Backend.OrderComplete.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.2-DAL\YQTrack.Backend.OrderComplete.IRepository\YQTrack.Backend.OrderComplete.IRepository.csproj">
+      <Project>{24452778-0a2a-40b8-8cf1-992dd3107d24}</Project>
+      <Name>YQTrack.Backend.OrderComplete.IRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.2-DAL\YQTrack.Backend.OrderComplete.Repository\YQTrack.Backend.OrderComplete.Repository.csproj">
+      <Project>{5cba2b02-df63-4a49-b8a5-87e89bcc667e}</Project>
+      <Name>YQTrack.Backend.OrderComplete.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.3-BLL\YQTrack.Backend.OrderComplete.BLL\YQTrack.Backend.OrderComplete.BLL.csproj">
+      <Project>{4657fb9e-4553-428c-a321-3ac524b174f0}</Project>
+      <Name>YQTrack.Backend.OrderComplete.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.3-BLL\YQTrack.Backend.OrderComplete.DTO\YQTrack.Backend.OrderComplete.DTO.csproj">
+      <Project>{396DD4C7-3804-4719-B0FF-0D92548BE0C3}</Project>
+      <Name>YQTrack.Backend.OrderComplete.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.3-BLL\YQTrack.Backend.OrderComplete.IBLL\YQTrack.Backend.OrderComplete.IBLL.csproj">
+      <Project>{1EE63765-F80D-4E1C-AB4F-FD0063F556B6}</Project>
+      <Name>YQTrack.Backend.OrderComplete.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YQTrack.Backend.OrderComplete.IService\YQTrack.Backend.OrderComplete.IService.csproj">
+      <Project>{1cd5dcc8-e9ab-46d5-a579-bc90ab9a7031}</Project>
+      <Name>YQTrack.Backend.OrderComplete.IService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

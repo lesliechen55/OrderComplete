@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YQTrack.Backend.UpgradeConsole</name>
+    </assembly>
+    <members>
+        <member name="T:YQTrack.Backend.UpgradeConsole.ArgumentsParser">
+            <summary>
+            参数解析
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.UpgradeConsole.ArgumentsParser.TempFilePath">
+            <summary>
+            上传好的AppName升级文件目录
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.UpgradeConsole.ArgumentsParser.InstallPath">
+            <summary>
+            AppName 的安装目录
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.UpgradeConsole.ArgumentsParser.UpgradeRunPath">
+            <summary>
+            升级程序运行目录
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.UpgradeConsole.ArgumentsParser.AppName">
+            <summary>
+            启动AppName名字
+            如：YQTrack.Backend.UpgradeConsole.exe
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.UpgradeConsole.ArgumentsParser.IsValidata">
+            <summary>
+            参数信息是否验证通过
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.UpgradeConsole.FileWatcher">
+            <summary>
+            应用服务文件变更监视和重启处理
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.UpgradeConsole.FileWatcher._Watcher">
+            <summary>
+            文件监视,监视文件变更
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.UpgradeConsole.FileWatcher._TimerRestart">
+            <summary>
+            定时器,在文件变更后定义时间缓冲用于重启
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.UpgradeConsole.FileWatcher.RESTART_NOTIFY_WAIT_TIME">
+            <summary>
+            重启之后通知的等待时间（秒）
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.UpgradeConsole.FileWatcher.FILE_UPDATE_WAIT_TIME">
+            <summary>
+            文件更新通知后的等待缓冲时间（秒）
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.UpgradeConsole.FileWatcher.OnBeforeRestart">
+            <summary>
+            开始重启之前,通知调用方,调用方返回true继续重启,如果调用方不处理,则默认继续,主要用于调用方有独占资源需要提前释放的,比如Socket端口等
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.UpgradeConsole.FileWatcher.OnRestartFaild">
+            <summary>
+            重启失败后
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.UpgradeConsole.FileWatcher._isCopyRunFile">
+            <summary>
+            是否复制Run运行目录的文件到运行根目录
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.UpgradeConsole.FileWatcher._isLoopWait">
+            <summary>
+            是否循环等待执行更新，等待OnBeforeRestart方法返回true
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.FileWatcher.#ctor(System.Int32,System.Boolean,System.String,System.String)">
+            <summary>
+            文件监视类构造
+            默认是不循环等待执行。
+            默认是CopyFile文件到跟目录运行，启动。
+            </summary>
+            <param name="waitUpdateTimeSeconds">文件更新通知后的等待缓冲时间（秒），多少秒后开始更新升级</param>
+            <param name="isLoopWait">是否循环等待更新，等待OnBeforeRestart方法返回true;当返回false循环等待执行</param>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.FileWatcher.#ctor(System.Int32,System.Boolean,System.Boolean,System.String,System.String)">
+            <summary>
+            文件监视类构造
+            </summary>
+            <param name="waitUpdateTimeSeconds">文件更新通知后的等待缓冲时间（秒）</param>
+            <param name="isLoopWait">是否循环等待更新，等待OnBeforeRestart方法返回true;当返回false循环等待执行</param>
+            <param name="isCopyFile">是否copy文件到根目录;true会复制Run目录的文件到根目录，false：自动启动当前程序;自身程序处理加载Run目录的文件</param>
+            <param name="watcherPath">监听目录；默认:Run</param>
+            <param name="strFilter">监听的后缀文件；默认：*.dll</param>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.FileWatcher.StartUpgradeConsoleCopyFile(System.Object)">
+            <summary>
+            启动升级程序，复制Run目录文件到程序跟目录。启动程序
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.FileWatcher.AutoRestartRunFile(System.Object)">
+            <summary>
+            自动启动程序，程序会自己加载Run目录的文件信息
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.Program.ReplaceInstallPathFile(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tempFilePath"></param>
+            <param name="installPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.UpgradeService.InitUpgradeConfig">
+            <summary>
+            初始化升级服务。默认15秒后开始更新
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.UpgradeService.InitUpgradeConfig(System.Int32,System.Func{System.Boolean})">
+            <summary>
+            初始化升级服务
+            </summary>
+            <param name="waitUpdateTimeSeconds">文件更新通知后的等待缓冲时间（秒）</param>
+            <param name="onBeforeRestart">处理函数</param>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.UpgradeService.InitUpgradeConfig(System.Int32,System.Boolean,System.Func{System.Boolean},System.String,System.String)">
+            <summary>
+            初始化升级服务
+            </summary>
+            <param name="waitUpdateTimeSeconds">文件更新通知后的等待缓冲时间（秒）</param>
+            <param name="isLoopWait">是否循环等待更新，等待 onBeforeRestart 方法返回true;当返回false循环等待执行</param>
+            <param name="onBeforeRestart">处理函数</param>
+            <param name="watcherPath">监听的主程序下目录；默认是Run目录</param>
+            <param name="strFilter">监听的文件后缀;默认是:*.dll</param>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.UpgradeService.InitUpgradeConfig(System.Int32,System.Boolean,System.Boolean,System.Func{System.Boolean},System.String,System.String)">
+            <summary>
+            初始化升级服务,指定isCopyFile,是区分是否Copy文件根目录，还是启动加载Run文件
+            </summary>
+            <param name="waitUpdateTimeSeconds">文件更新通知后的等待缓冲时间（秒）</param>
+            <param name="isLoopWait">是否循环等待更新，等待 onBeforeRestart 方法返回true;当返回false循环等待执行</param>
+            <param name="isCopyFile">是否copy文件到根目录;true会复制Run目录的文件到根目录，false：自动启动当前程序;自身程序处理加载Run目录的文件</param>
+            <param name="onBeforeRestart">处理函数</param>
+            <param name="watcherPath">监听的主程序下目录；默认是Run目录</param>
+            <param name="strFilter">监听的文件后缀;默认是:*.dll</param>
+        </member>
+        <member name="T:YQTrack.Backend.UpgradeConsole.UpgradeUtils">
+            <summary>
+            升级程序处理
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.UpgradeConsole.UpgradeUtils.RESTART_NOTIFY_WAIT_TIME">
+            <summary>
+            重启之后通知的等待时间（秒）
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.UpgradeUtils.GetUpgradeConsoleTempPath">
+            <summary>
+            获取当前运行程序根目录下的升级程序临时运行目录
+            </summary>
+            <returns>返回临时运行路径信息 {BaseDirectory}//UpgradeConsole</returns>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.UpgradeUtils.CopyUpgradeConsoleToRunTempPath">
+            <summary>
+            复制控制台升级程序到临时目录，等会启动的时候，就使用它自动。
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.UpgradeUtils.StartUpgradeConsole(System.String)">
+            <summary>
+            启动升级程序控制台
+            </summary>
+            <param name="fileTempPath">上传好文件目录；为空:默认就是当前程序下的Run目录下</param>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.UpgradeUtils.CopyDirectory(System.String,System.String)">
+            <summary>
+            拷贝文件夹
+            </summary>
+            <param name="srcdir">原始目录</param>
+            <param name="desdir">复制到目录</param>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.UpgradeUtils.CreateDirectory(System.String,System.Boolean)">
+            <summary>
+            创建完整路径的路径
+            </summary>
+            <param name="path">完成路径</param>
+            <param name="pathIncludeFile">是否包含文件名，包含FileName请传递true</param>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.UpgradeUtils.KillProcess(System.String,System.String)">
+            <summary>
+            杀死应用程序进程
+            </summary>
+            <param name="installPath">运行路径</param>
+            <param name="appPoolName">应用程序名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.UpgradeConsole.UpgradeUtils.StartProcess(System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            重启应用程序进程
+            </summary>
+            <param name="installPath">运行路径</param>
+            <param name="appPoolName">名称</param>
+            <param name="isKillRestart">是否先关闭运行，在重启</param>
+            <param name="arguments">启动参数</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

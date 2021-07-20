@@ -1,0 +1,417 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YQTrack.Backend.Seller.MQData.Helper</name>
+    </assembly>
+    <members>
+        <member name="T:YQTrack.Backend.Seller.MQData.Helper.LogDefine">
+            <summary>
+                日志信息定义
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Seller.MQData.Helper.LogDefine.LogError">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Seller.MQData.Helper.LogDefine.LogWarn">
+            <summary>
+            Warn
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Seller.MQData.Helper.LogDefine.LogVerbose">
+            <summary>
+            Verbose
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Seller.MQData.Helper.Models.BatchSetTrackInfoModel">
+            <summary>
+             批量设置Mode操作
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.BatchSetTrackInfoModel.BatchId">
+            <summary>
+            批量任务ID
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.BatchSetTrackInfoModel.BatchType">
+            <summary>
+            批量操作类型
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.BatchSetTrackInfoModel.TrackInfoIds">
+            <summary>
+            处理的单号ID
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.BatchSetTrackInfoModel.Params">
+            <summary>
+            批量设置参数数据
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.BatchSetTrackInfoModel.FArchivedState">
+            <summary>
+             归档状态,0:未完成查询；1：已完成查询，2：已归档查询
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Seller.MQData.Helper.Models.ExportTrackUploadFileInfoMQModel">
+            <summary>
+             导出单号上传文件Model
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.ExportTrackUploadFileInfoMQModel.FUserId">
+            <summary>       
+            用户Id
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.ExportTrackUploadFileInfoMQModel.RouteModel">
+            <summary>
+            路由信息
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.ExportTrackUploadFileInfoMQModel.BatchId">
+            <summary>
+            批量任务ID
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.ExportTrackUploadFileInfoMQModel.FilePath">
+            <summary>
+            上传文件文完整的服务器路径
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.ExportTrackUploadFileInfoMQModel.FileNameKey">
+            <summary>
+            文件名称Key
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.ExportTrackUploadFileInfoMQModel.TotalCount">
+            <summary>
+            处理导出总数
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.ExportTrackUploadFileInfoMQModel.RetryCount">
+            <summary>
+            重试次数
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.PlatformAction.AEExtendTime.ExtendDays">
+            <summary>
+            延长天数
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Seller.MQData.Helper.Models.PlatformOrderModel">
+            <summary>
+            PlatformOrderModel
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.PlatformOrderModel.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.PlatformOrderModel.OrderIds">
+            <summary>
+             订单ID集合
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.PlatformOrderModel.PlatformAction">
+            <summary>
+            平台功能
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.PlatformOrderModel.RouteModel">
+            <summary>
+            路由信息
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.Models.PlatformOrderModel.Params">
+            <summary>
+            参数数据json
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Seller.MQData.Helper.PlatformOrderMQService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Seller.MQData.Helper.PlatformOrderMQService._instance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.PlatformOrderMQService.Instance">
+            <summary>
+             模式实例对象
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Seller.MQData.Helper.PlatformOrderMQService._isSubscribe">
+            <summary>
+            是否已经订阅
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.PlatformOrderMQService.#ctor">
+            <summary>
+            构造消费者处理服务
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.PlatformOrderMQService.Subscribe(System.Func{YQTrack.Backend.Seller.MQData.Helper.Models.PlatformOrderModel,System.Boolean})">
+            <summary>
+             订阅消息
+            </summary>
+            <param name="SubscribeFunc">委托方法</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.PlatformOrderMQService.UnSubscribe">
+            <summary>
+             订阅消息
+            </summary>
+            <param name="SubscribeFunc">委托方法</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.PlatformOrderMQService.Publish(YQTrack.Backend.Seller.MQData.Helper.Models.PlatformOrderModel)">
+            <summary>
+            发送消息到消息队列服务
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoDataMQHelper.BatchSetTrackInfo(YQTrack.Backend.Models.DataRouteModel,System.Int64,YQTrack.Backend.Seller.MQData.Helper.Models.BatchSetTrackInfoModel)">
+             <summary>
+            批量操作单号数据处理
+             </summary>
+             <param name="routeModel"></param>
+             <param name="userId"></param>
+             <param name="dataModel"></param>
+             <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoDataMQHelper.SendTransferTrackNoWork(YQTrack.Backend.Models.DataRouteModel,System.Int64)">
+            <summary>
+            发送转移单号到队列
+            </summary>
+            <param name="routeModel">路由信息</param>
+            <param name="userId">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoDataMQHelper.DeleteShop(YQTrack.Backend.Models.DataRouteModel,System.Int64,System.Int64)">
+            <summary>
+            解绑店铺后，需要处理Es相关的数据
+            </summary>
+            <param name="routeModel"></param>
+            <param name="userId"></param>
+            <param name="shopId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoDataMQHelper.SendTransferTrackNoBusiness(YQTrack.Backend.Models.DataRouteModel,System.Int64)">
+            <summary>
+            发送转移单号后的业务处理
+            </summary>
+            <param name="routeModel">路由信息</param>
+            <param name="userId">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoDataMQHelper.SendBatchExportTrack(YQTrack.Backend.Models.DataRouteModel,System.Int64,System.Int64,System.String,System.Object)">
+            <summary>
+            发送批量下载任务处理
+            </summary>
+            <param name="routeModel"></param>
+            <param name="userId"></param>
+             <param name="lang"></param>
+            <param name="batchId"></param>
+            <param name="searchDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoDataMQHelper.SendBatchExportTrackRetry(YQTrack.Backend.Seller.MQData.Helper.SellerBatchTaskExportTrackModel,System.Int32)">
+            <summary>
+            发送批量下载任务处理，重试操作
+            </summary>
+            <param name="routeModel"></param>
+            <param name="userId"></param>
+             <param name="lang"></param>
+            <param name="batchId"></param>
+            <param name="searchDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoDataMQHelper.SendExportTrackUploadFileInfoModel(YQTrack.Backend.Seller.MQData.Helper.Models.ExportTrackUploadFileInfoMQModel)">
+            <summary>
+            发送批量下载任务处理
+            </summary>
+            <param name="uploadModel"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerModel">
+            <summary>
+             Seller单号队列信息Model
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerModel.FUserId">
+            <summary>       
+            用户Id
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerModel.RouteModel">
+            <summary>
+            路由信息
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerModel.OperationType">
+            <summary>
+            Es局部更新操作
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerModel.TarckInfos">
+            <summary>
+            单号信息
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Seller.MQData.Helper.SellerOperationType">
+            <summary>
+            seller 单号操作日志
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Seller.MQData.Helper.SellerOperationType.BatchSet">
+            <summary>
+            批量设置单号信息
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Seller.MQData.Helper.SellerOperationType.TransferTrackNo">
+            <summary>
+            转移单号
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Seller.MQData.Helper.SellerOperationType.DeleteShop">
+            <summary>
+            解绑删除店铺
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Seller.MQData.Helper.SellerOperationType.TransferTrackNoEnd">
+            <summary>
+            转移单号后业务处理
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerBatchTaskExportTrackModel.FUserId">
+            <summary>       
+            用户Id
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerBatchTaskExportTrackModel.RouteModel">
+            <summary>
+            路由信息
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerBatchTaskExportTrackModel.BatchId">
+            <summary>
+            批量任务ID
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerBatchTaskExportTrackModel.Language">
+            <summary>
+            当前导出语言
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerBatchTaskExportTrackModel.SearchParams">
+            <summary>
+            查询参数
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerBatchTaskExportTrackModel.RetryCount">
+            <summary>
+            重试次数
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQService">
+            <summary>
+            Seller站内信消息队列服务
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQService._instance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQService.Instance">
+            <summary>
+             模式实例对象
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQService._isSubscribe">
+            <summary>
+            是否已经订阅
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQService.#ctor">
+            <summary>
+            构造消费者处理服务
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQService.InitRMQ">
+            <summary>
+            初始化队列
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQService.Subscribe(System.Func{YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerModel,System.Boolean})">
+            <summary>
+             订阅消息
+            </summary>
+            <param name="SubscribeFunc">委托方法</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQService.UnSubscribe">
+            <summary>
+             取消订阅消息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQService.Publish(YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerModel)">
+            <summary>
+            发送消息到消息队列服务
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQSetting">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQSetting._instance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQSetting.Instance">
+            <summary>
+             模式实例对象
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQSetting.RabbitMqConfig">
+            <summary>
+            RabbitMQ配置
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.Seller.MQData.Helper.SellerTrackInfoHandlerMQSetting.Register">
+            <summary>
+            初始化读取设置
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Seller.MQData.Helper.SellerDataRabbitMqConfigDefaultSetting">
+            <summary>
+            RabbitMQ-Default 的配置信息
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerDataRabbitMqConfigDefaultSetting.RabbitMqConfig">
+            <summary>
+            RabbitMQ-RPC RabbitMQ配置
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Seller.MQData.Helper.SellerDataRabbitMqConfigRPCDefaultSetting">
+            <summary>
+            RabbitMQ-RPC 的配置信息
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Seller.MQData.Helper.SellerDataRabbitMqConfigRPCDefaultSetting.RabbitMqConfig">
+            <summary>
+            RabbitMQ-RPC RabbitMQ配置
+            </summary>
+        </member>
+    </members>
+</doc>

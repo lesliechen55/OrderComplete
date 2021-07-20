@@ -1,0 +1,33 @@
+﻿2021-07-16 11:34:02,467 [0] INFO  seller.ordercompleteService - 日志, 初始化LoggerSystem成功
+2021-07-16 11:34:02,481 [0] INFO  seller.ordercompleteService - 日志, 没有初始化LoggerRecordData, 调用记录日志将忽略
+2021-07-16 11:34:02,482 [0] INFO  seller.ordercompleteService - 开始启动
+2021-07-16 11:34:03,727 [0] INFO  seller.ordercompleteService - 设置加载成功(数据库)
+2021-07-16 11:34:03,825 [0] INFO  seller.ordercompleteService - 集群连接:{"keyOrder":{"node1":3,"node2":1,"node3":2},"result":["amqp://192.168.1.214:5671","amqp://192.168.1.214:5672","amqp://192.168.1.214:5673"]}
+2021-07-16 11:34:07,835 [0] INFO  seller.ordercompleteService - 已存在计数器类别无需创建, Name:YQ-RabbitMQ.Publish
+2021-07-16 11:34:07,835 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:SendQueueSuccess, Type:NumberOfItems64
+2021-07-16 11:34:07,835 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:SendQueueError, Type:NumberOfItems64
+2021-07-16 11:34:07,835 [0] INFO  seller.ordercompleteService - 初始化计数器类别完成, Name:YQ-RabbitMQ.Publish, IsSingle:True
+2021-07-16 11:34:07,837 [0] INFO  seller.ordercompleteService - 已存在计数器类别无需创建, Name:YQ-RabbitMQ.Connection
+2021-07-16 11:34:07,837 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:ConnectionShutdown, Type:NumberOfItems64
+2021-07-16 11:34:07,837 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:ConnectionUnblocked, Type:NumberOfItems64
+2021-07-16 11:34:07,837 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:CallbackException, Type:NumberOfItems64
+2021-07-16 11:34:07,837 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:ConnectionBlocked, Type:NumberOfItems64
+2021-07-16 11:34:07,837 [0] INFO  seller.ordercompleteService - 初始化计数器类别完成, Name:YQ-RabbitMQ.Connection, IsSingle:False
+2021-07-16 11:34:07,837 [0] INFO  seller.ordercompleteService - 消息队列概要:初始化完成，主机amqp://192.168.1.214:5671
+2021-07-16 11:34:07,845 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":8,"entityCount":0}
+2021-07-16 11:34:07,850 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller"]
+2021-07-16 11:34:07,850 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":1,"entityCount":null}
+2021-07-16 11:34:07,850 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller","user"]
+2021-07-16 11:34:07,850 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":1,"entityCount":null}
+2021-07-16 11:34:07,850 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller","user","log"]
+2021-07-16 11:34:07,851 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":2,"entityCount":14}
+2021-07-16 11:34:07,851 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller","user","log","buyer"]
+2021-07-16 11:34:07,851 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":4,"entityCount":0}
+2021-07-16 11:34:07,851 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller","user","log","buyer","sellermessage"]
+2021-07-16 11:34:08,043 [0] INFO  seller.ordercompleteService - 连接建立:[{"HostName":"192.168.1.214","Port":5672,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}},{"HostName":"192.168.1.214","Port":5673,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}},{"HostName":"192.168.1.214","Port":5671,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}}]
+2021-07-16 11:34:12,774 [0] INFO  seller.ordercompleteService - 获取连接通道:1
+2021-07-16 11:34:12,796 [0] INFO  seller.ordercompleteService - 声明队列完成:{"ExchName":"Seller.OrderComplete","QueueName":"Seller.OrderComplete.Service2","AutoAck":false,"MaxConsumer":2,"ExpireTime":"01:00:00","DeadQueueName":null}
+2021-07-16 11:34:12,822 [0] INFO  seller.ordercompleteService - 消费者注册:{"Queue":"Seller.OrderComplete.Service2","ConsumerTag":"amq.ctag-UJIFcfcRYUZ2ikLxbqcuPw"}
+2021-07-16 11:34:12,825 [0] INFO  seller.ordercompleteService - 消费者注册:{"Queue":"Seller.OrderComplete.Service2","ConsumerTag":"amq.ctag-mUcOc6e0y8M1P2zWt09Gsg"}
+2021-07-16 11:34:12,825 [0] INFO  seller.ordercompleteService - 消息订阅完成:{"Queue":"Seller.OrderComplete.Service2"}
+2021-07-16 11:34:12,826 [0] INFO  seller.ordercompleteService - OrderRandomCompleteTask.ExcecuteAuto.定时执行随机自动完成任务开始

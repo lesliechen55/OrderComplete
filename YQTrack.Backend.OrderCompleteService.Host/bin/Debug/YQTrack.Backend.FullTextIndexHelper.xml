@@ -1,0 +1,783 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YQTrack.Backend.FullTextIndexHelper</name>
+    </assembly>
+    <members>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.FullTextIndexAbstract">
+            <summary>
+            全文检索抽象接口
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.FullTextIndexFactory">
+            <summary>
+            全文检索实例工厂
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.FullTextIndexFactory._ListFullTextIndex">
+            <summary>
+            全文检索实例集合
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextIndexFactory.#cctor">
+            <summary>
+            静态构造
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextIndexFactory.Init">
+            <summary>
+            初始化数据
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextIndexFactory.GetFullTextIndexHelper(YQTrack.Backend.Enums.UserRoleType)">
+            <summary>
+            根据角色获取全文检索实例
+            </summary>
+            <param name="userRoleType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.FullTextIndexService">
+            <summary>
+            全文检索服务
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.FullTextIndexService.fullTextIndexAbstract">
+            <summary>
+            全文抽象类
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextIndexService.#ctor(YQTrack.Backend.Enums.UserRoleType)">
+            <summary>
+            实例化
+            </summary>
+            <param name="userRoleType">用户角色</param>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextIndexService.AddOrUpdate(YQTrack.Backend.FullTextIndexHelper.FullTextTrackInfo,System.String,System.Boolean)">
+            <summary>
+            添加或修改订单
+            </summary>
+            <param name="trackInfo">数据</param>
+            <param name="dbno">数据库编号</param>
+            <param name="isArchived">是否归档</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextIndexService.Delete(System.Int64,System.String,System.Boolean,System.Int64)">
+            <summary>
+            删除单条数据
+            </summary>
+            <param name="id">TrackInfoId</param>
+            <param name="dbno">数据库编号</param>
+            <param name="isArchived">是否归档</param>
+            <param name="userId">用户ID，做为路由项使用,不需要做路由的可忽略</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextIndexService.Archive(System.Int64,System.String,System.Boolean,System.Int64)">
+            <summary>
+            归档指定的追踪信息
+            </summary>
+            <param name="id">TrackInfoId</param>
+            <param name="dbno">数据库编号</param>
+            <param name="isArchived">是否归档</param>
+            <param name="userId">用户ID，做为路由项使用,不需要做路由的可忽略</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextIndexService.Search``1(System.String,System.Int64,System.Nullable{System.Boolean},System.String,System.Int32,System.Int32)">
+            <summary>
+            订单全文检索
+            </summary>
+            <param name="dbno">数据库编号</param>
+            <param name="userId">用户ID</param>
+            <param name="isArchived">是否归档</param>
+            <param name="content">检索内容</param>
+            <param name="start">开始位置（第几条索引）</param>
+            <param name="pageSize">每页条数</param>
+            <returns>检索结果</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextIndexService.SearchAsync``1(System.String,System.Int64,System.Nullable{System.Boolean},System.String,System.Int32,System.Int32)">
+            <summary>
+            订单全文检索
+            </summary>
+            <param name="dbno">数据库编号</param>
+            <param name="userId">用户ID</param>
+            <param name="isArchived">是否归档</param>
+            <param name="content">检索内容</param>
+            <param name="start">开始位置（第几条索引）</param>
+            <param name="pageSize">每页条数</param>
+            <returns>检索结果</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextIndexService.SearchByPage``1(System.String,System.Int64,System.Nullable{System.Boolean},System.String,System.Int32,System.Int32)">
+            <summary>
+            订单全文检索
+            </summary>
+            <param name="dbno">数据库编号</param>
+            <param name="userId">用户ID</param>
+            <param name="isArchived">是否归档</param>
+            <param name="content">检索内容</param>
+            <param name="start">开始位置（第几条索引）,第一条为0</param>
+            <param name="pageSize">每页条数</param>
+            <returns>检索结果</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextIndexService.SearchByPageAsync``1(System.String,System.Int64,System.Nullable{System.Boolean},System.String,System.Int32,System.Int32)">
+            <summary>
+            订单全文检索
+            </summary>
+            <param name="dbno">数据库编号</param>
+            <param name="userId">用户ID</param>
+            <param name="isArchived">是否归档</param>
+            <param name="content">检索内容</param>
+            <param name="start">开始位置（第几条索引）,第一条为0</param>
+            <param name="pageSize">每页条数</param>
+            <returns>检索结果</returns>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.Properties.Resources.Core14_profile">
+             <summary>
+               查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+            &lt;!--Contains models for the following languages (by ISO 639-3): dan, deu, eng, fra, ita, jpn, kor, nld, nor, por, rus, spa, swe, zho--&gt;
+            &lt;LanguageIdentificationProfile&gt;
+              &lt;Parameters&gt;
+                &lt;MaximumSizeOfDistribution&gt;4000&lt;/MaximumSizeOfDistribution&gt;
+                &lt;MaxNGramLength&gt;5&lt;/MaxNGramLength&gt;
+              &lt;/Parameters&gt;
+              &lt;LanguageModels&gt;
+                &lt;LanguageModel&gt;
+                  &lt;Language ISO639-2T=&quot;&quot; ISO639-3=&quot;&quot; /&gt;
+                  &lt;metadata /&gt;
+                  &lt;ngrams totalNoiseCount=&quot;1&quot; distinctNoiseCount=&quot;1&quot;&gt;
+             [字符串的其余部分被截断]&quot;; 的本地化字符串。
+             </summary>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.BuyerElasticSearchSetting">
+            <summary>
+            ElasticSearchSetting
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.BuyerElasticSearchSetting.ESConfig">
+            <summary>
+            配置Model
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.BuyerElasticSearchSetting.Register">
+            <summary>
+            注册读取配置信息
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.BuyerElasticSearchSetting.Default">
+            <summary>
+            获取配置信息
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.SellerElasticSearchSetting">
+            <summary>
+            ElasticSearchSetting
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.SellerElasticSearchSetting.ESConfig">
+            <summary>
+            配置Model
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerElasticSearchSetting.Register">
+            <summary>
+            注册读取配置信息
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.SellerElasticSearchSetting.Default">
+            <summary>
+            获取配置信息
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.ESItemConfig">
+            <summary>
+            配置类
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.ESItemConfig.IndexName">
+            <summary>
+            索引名称
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.ESItemConfig.Address">
+            <summary>
+            ElasticSearch服务器地址
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.ESItemConfig.User">
+            <summary>
+            ElasticSearch用户名
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.ESItemConfig.Password">
+            <summary>
+            ElasticSearch密码
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.BuyerHelper">
+            <summary>
+            买家全文检索
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.BuyerHelper.queueService">
+            <summary>
+            消息队列操作
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.BuyerHelper.fullTextCommon">
+            <summary>
+            全文检索示例
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.BuyerHelper.UserRole">
+            <summary>
+            用户角色
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.BuyerHelper.#ctor">
+            <summary>
+            初始化构造
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.BuyerHelper.AddOrUpdate(YQTrack.Backend.FullTextIndexHelper.FullTextTrackInfo,System.String,System.Boolean)">
+            <summary>
+            添加或修改订单
+            </summary>
+            <param name="trackInfo">数据</param>
+            <param name="dbno">数据库编号</param>
+            <param name="isArchived">是否归档</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.BuyerHelper.Delete(System.Int64,System.String,System.Boolean,System.Int64)">
+            <summary>
+            删除单条数据
+            </summary>
+            <param name="id">TrackInfoId</param>
+            <param name="dbno">数据库编号</param>
+            <param name="isArchived">是否归档</param>
+            <param name="userId">用户ID，做为路由项使用</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.BuyerHelper.Archive(System.Int64,System.String,System.Boolean,System.Int64)">
+            <summary>
+            归档指定的追踪信息
+            </summary>
+            <param name="id">TrackInfoId</param>
+            <param name="dbno">数据库编号</param>
+            <param name="isArchived">是否归档</param>
+            <param name="userId">用户ID，做为路由项使用</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.BuyerHelper.Search``1(System.String,System.Int64,System.Nullable{System.Boolean},System.String,System.Int32,System.Int32)">
+            <summary>
+            订单全文检索
+            </summary>
+            <param name="dbno">数据库编号</param>
+            <param name="userId">用户ID</param>
+            <param name="isArchived">是否归档</param>
+            <param name="content">检索内容</param>
+            <param name="start">开始位置（第几条索引）</param>
+            <param name="pageSize">每页条数</param>
+            <returns>检索结果</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.BuyerHelper.SearchAsync``1(System.String,System.Int64,System.Nullable{System.Boolean},System.String,System.Int32,System.Int32)">
+            <summary>
+            订单全文检索
+            </summary>
+            <param name="dbno">数据库编号</param>
+            <param name="userId">用户ID</param>
+            <param name="isArchived">是否归档</param>
+            <param name="content">检索内容</param>
+            <param name="start">开始位置（第几条索引）</param>
+            <param name="pageSize">每页条数</param>
+            <returns>检索结果</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.BuyerHelper.SearchByPage``1(System.String,System.Int64,System.Nullable{System.Boolean},System.String,System.Int32,System.Int32)">
+            <summary>
+            订单全文检索
+            </summary>
+            <param name="dbno">数据库编号</param>
+            <param name="userId">用户ID</param>
+            <param name="isArchived">是否归档</param>
+            <param name="content">检索内容</param>
+            <param name="start">开始位置（第几条索引）</param>
+            <param name="pageSize">每页条数</param>
+            <returns>检索结果</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.BuyerHelper.SearchByPageAsync``1(System.String,System.Int64,System.Nullable{System.Boolean},System.String,System.Int32,System.Int32)">
+            <summary>
+            订单全文检索
+            </summary>
+            <param name="dbno">数据库编号</param>
+            <param name="userId">用户ID</param>
+            <param name="isArchived">是否归档</param>
+            <param name="content">检索内容</param>
+            <param name="start">开始位置（第几条索引）</param>
+            <param name="pageSize">每页条数</param>
+            <returns>检索结果</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.BuyerHelper.GetField(System.String[])">
+            <summary>
+            指定分词条件
+            </summary>
+            <param name="languages"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.FullTextCommon">
+            <summary>
+            全文检索实例化ES
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.FullTextCommon.indexBuyer">
+            <summary>
+            ES索引：买家订单前缀
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.FullTextCommon.indexSeller">
+            <summary>
+            ES索引：卖家订单前缀
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.FullTextCommon.indexSellerArchived">
+            <summary>
+            ES索引：卖家归档订单前缀
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.FullTextCommon.esType">
+            <summary>
+            ESType
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.FullTextCommon.dicElastic">
+            <summary>
+            ES实例列表
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextCommon.#ctor">
+            <summary>
+            无参构造
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextCommon.CreateEs(System.String)">
+            <summary>
+            创建ES对象
+            </summary>
+            <param name="esIndexName">索引名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextCommon.CreateEs(YQTrack.Backend.Enums.UserRoleType,System.String,System.Boolean)">
+            <summary>
+            创建ES对象
+            </summary>
+            <param name="userRoleType">用户角色</param>
+            <param name="dbno">库编号</param>
+            <param name="isArchived">是否归档</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.FullTextCommon.GetEsIndexName(YQTrack.Backend.Enums.UserRoleType,System.String,System.Boolean)">
+            <summary>
+            获取Es索引名称
+            </summary>
+            <param name="userRoleType">用户角色</param>
+            <param name="dbno">库编号</param>
+            <param name="isArchived">是否归档</param>
+            <returns></returns>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.RmqModel">
+            <summary>
+            全文检索实体，发送到消息队列
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.RmqModel.OperaType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.RmqModel.Id">
+            <summary>
+            TrackInfoId
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.RmqModel.Model">
+            <summary>
+            订单实体
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.RmqModel.IsArchived">
+            <summary>
+            是否归档
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.RmqModel.DBNO">
+            <summary>
+            数据库编号
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.RmqModel.Routing">
+            <summary>
+            路由参数
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.FullTextType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.FullTextType.AddOrUpdate">
+            <summary>
+            增加或修改
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.FullTextType.Delete">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.FullTextType.Archive">
+            <summary>
+            归档
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.SellerHelper">
+            <summary>
+            卖家全文检索
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.SellerHelper.queueService">
+            <summary>
+            消息队列操作
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.SellerHelper.fullTextCommon">
+            <summary>
+            全文检索示例
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.SellerHelper.UserRole">
+            <summary>
+            用户角色
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerHelper.#ctor">
+            <summary>
+            初始化构造
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerHelper.AddOrUpdate(YQTrack.Backend.FullTextIndexHelper.FullTextTrackInfo,System.String,System.Boolean)">
+            <summary>
+            添加/更新订单(若存在则自动更新)
+            </summary>
+            <param name="trackInfo">数据</param>
+            <param name="dbno">数据库编号</param>
+            <param name="isArchived">是否归档</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerHelper.Delete(System.Int64,System.String,System.Boolean,System.Int64)">
+            <summary>
+            删除单条数据
+            </summary>
+            <param name="id">TrackInfoId</param>
+            <param name="dbno">数据库编号</param>
+            <param name="isArchived">是否归档</param>
+            <param name="userId">用户ID，做为路由项使用</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerHelper.Archive(System.Int64,System.String,System.Boolean,System.Int64)">
+            <summary>
+            归档指定的追踪信息
+            </summary>
+            <param name="id">TrackInfoId</param>
+            <param name="dbno">数据库编号</param>
+            <param name="isArchived">是否归档</param>
+            <param name="userId">用户ID，做为路由项使用</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerHelper.Search``1(System.String,System.Int64,System.Nullable{System.Boolean},System.String,System.Int32,System.Int32)">
+            <summary>
+            卖家订单全文检索
+            </summary>
+            <param name="dbno">数据库编号</param>
+            <param name="userId">用户ID</param>
+            <param name="isArchived">是否归档</param>
+            <param name="content">检索内容</param>
+            <param name="start">开始位置（第几条索引,第一条是0）</param>
+            <param name="pageSize">每页条数</param>
+            <returns>检索结果</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerHelper.SearchAsync``1(System.String,System.Int64,System.Nullable{System.Boolean},System.String,System.Int32,System.Int32)">
+            <summary>
+            卖家订单全文检索
+            </summary>
+            <param name="dbno">数据库编号</param>
+            <param name="userId">用户ID</param>
+            <param name="isArchived">是否归档</param>
+            <param name="content">检索内容</param>
+            <param name="start">开始位置（第几条索引,第一条是0）</param>
+            <param name="pageSize">每页条数</param>
+            <returns>检索结果</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerHelper.SearchByPage``1(System.String,System.Int64,System.Nullable{System.Boolean},System.String,System.Int32,System.Int32)">
+            <summary>
+            卖家订单全文检索
+            </summary>
+            <param name="dbno">数据库编号</param>
+            <param name="userId">用户ID</param>
+            <param name="isArchived">是否归档</param>
+            <param name="content">检索内容</param>
+            <param name="start">开始位置（第几条索引,第一条是0）</param>
+            <param name="pageSize">每页条数</param>
+            <returns>检索结果</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerHelper.SearchByPageAsync``1(System.String,System.Int64,System.Nullable{System.Boolean},System.String,System.Int32,System.Int32)">
+            <summary>
+            卖家订单全文检索
+            </summary>
+            <param name="dbno">数据库编号</param>
+            <param name="userId">用户ID</param>
+            <param name="isArchived">是否归档</param>
+            <param name="content">检索内容</param>
+            <param name="start">开始位置（第几条索引,第一条是0）</param>
+            <param name="pageSize">每页条数</param>
+            <returns>检索结果</returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerHelper.GetField(System.String[])">
+            <summary>
+            指定分词条件
+            </summary>
+            <param name="languages">语言</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerHelper.GetRoutingValue(System.Int64)">
+            <summary>
+             转换路由值
+            </summary>
+            <param name="userId"></param>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.FullTextTrackInfo">
+            <summary>
+            包裹信息
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.FullTextTrackInfo.Id">
+            <summary>
+            运单ID即TrackInfoId
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.FullTextTrackInfo.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.FullTextTrackInfo.TrackNo">
+            <summary>
+            运单号
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.FullTextTrackInfo.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.FullTextTrackInfo.Remark">
+            <summary>
+            订单备注
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.SellerTrackInfo">
+            <summary>
+            卖家包裹信息
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerTrackInfo.#ctor">
+            <summary>
+            无参构造
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerTrackInfo.#ctor(System.Int64,System.Int64,System.String,System.Nullable{System.DateTime},System.String,System.String,System.String)">
+            <summary>
+            有参构造
+            </summary>
+            <param name="_Id">运单ID即TrackInfoId</param>
+            <param name="_UserId">用户ID</param>
+            <param name="_TrackNo">运单号</param>
+            <param name="_CreateTime">创建时间</param>
+            <param name="_Remark">订单备注</param>
+            <param name="_OrderId">订单ID</param>
+            <param name="_OrderTitle">商品名称</param>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.SellerTrackInfo.#ctor(System.Int64,System.Int64,System.String,System.Nullable{System.DateTime},System.String,System.String,System.String,System.String)">
+            <summary>
+            有参构造
+            </summary>
+            <param name="_Id">运单ID即TrackInfoId</param>
+            <param name="_UserId">用户ID</param>
+            <param name="_TrackNo">运单号</param>
+            <param name="_CreateTime">创建时间</param>
+            <param name="_Remark">订单备注</param>
+            <param name="_OrderId">订单ID</param>
+            <param name="_OrderTitle">商品名称</param>
+            <param name="_BuyerEmail">买家邮箱</param>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.SellerTrackInfo.OrderId">
+            <summary>
+            订单ID
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.SellerTrackInfo.OrderTitle">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.SellerTrackInfo.BuyerEmail">
+            <summary>
+            买家邮箱
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.BuyerTrackInfo">
+            <summary>
+            买家包裹信息
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.BuyerTrackInfo.#ctor">
+            <summary>
+            无参构造
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.BuyerTrackInfo.#ctor(System.Int64,System.Int64,System.String,System.Nullable{System.DateTime},System.String,System.Boolean)">
+            <summary>
+            有参构造
+            </summary>
+            <param name="_Id">运单ID即TrackInfoId</param>
+            <param name="_UserId">用户ID</param>
+            <param name="_TrackNo">运单号</param>
+            <param name="_CreateTime">创建时间</param>
+            <param name="_Remark">订单备注</param>
+            <param name="_IsArchived">是否归档</param>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.BuyerTrackInfo.IsArchived">
+            <summary>
+            是否归档
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.OrderResult">
+            <summary>
+            搜索结果
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.OrderResult.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.LanguageHelper">
+            <summary>
+            语言检测类
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.LanguageHelper.identifier">
+            <summary>
+            语言内容
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.LanguageHelper.#cctor">
+            <summary>
+            初始化加载语言文件内容
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.LanguageHelper.GetLanguage(System.String)">
+            <summary>
+            检测语言：
+                得到固定前两种语言，如果没有则集合内容为空
+            </summary>
+            <param name="text">检测文本</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.LanguageHelper.ConvertLanguage(System.String)">
+            <summary>
+            转换成已有分词
+            </summary>
+            <param name="language"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.QueueServiceHelper">
+            <summary>
+            消息队列操作
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.QueueServiceHelper._QueueService">
+            <summary>
+            消息队列
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.QueueServiceHelper._RMQ">
+            <summary>
+            rmq实例
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.QueueServiceHelper._QueueName">
+            <summary>
+            队列名称
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.FullTextIndexHelper.QueueServiceHelper._Exchange">
+            <summary>
+            交换机
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.QueueServiceHelper.#ctor(YQTrack.Backend.Enums.UserRoleType)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="userRoleType">用户角色</param>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.QueueServiceHelper.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="queuename">队列名字</param>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.QueueServiceHelper.Publish(YQTrack.Backend.FullTextIndexHelper.RmqModel)">
+            <summary>
+            发送数据到队列
+            摘要:
+                调用此发送不用使用异步
+                业务层要判断是否发送成功，如果失败会记录Error日志
+            </summary>
+            <param name="rmqModel">实体</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="T:YQTrack.Backend.FullTextIndexHelper.RabbitMQSetting">
+            <summary>
+            RabbitMQ配置信息
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.RabbitMQSetting.RabbitMQConfig">
+            <summary>
+            RabbitMQ配置
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.FullTextIndexHelper.RabbitMQSetting.SettingsDefault">
+            <summary>
+            初始化设置
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.FullTextIndexHelper.RabbitMQSetting.Register">
+            <summary>
+            初始化读取设置
+            </summary>
+        </member>
+    </members>
+</doc>

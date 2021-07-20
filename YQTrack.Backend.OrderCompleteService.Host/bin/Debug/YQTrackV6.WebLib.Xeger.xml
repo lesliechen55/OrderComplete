@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YQTrackV6.WebLib.Xeger</name>
+    </assembly>
+    <members>
+        <member name="T:YQTrackV6.WebLib.Xeger.NumberDescHelper">
+            <summary>
+            单号辅助类
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.WebLib.Xeger.NumberDescHelper.ReadNumberDesc(YQTrackV6.WebLib.Model.Enums.CarrierType,System.String)">
+            <summary>
+            读取运输商所有单号描述
+            </summary>
+            <param name="carrier">运输商</param>
+            <param name="rule">附加单号规则</param>
+            <returns>单号描述</returns>
+        </member>
+        <member name="M:YQTrackV6.WebLib.Xeger.NumberDescHelper.ReadNumberDesc(YQTrackV6.WebLib.Model.Enums.CarrierType,System.String,System.Boolean)">
+            <summary>
+            读取运输商所有单号描述
+            </summary>
+            <param name="carrier">运输商</param>
+            <param name="rule">附加单号规则</param>
+            <param name="ignoreMoreRule">忽略单正则超过4种匹配的规则</param>
+            <returns>单号描述</returns>
+        </member>
+        <member name="M:YQTrackV6.WebLib.Xeger.NumberDescHelper.ReadNumberDesc(YQTrackV6.WebLib.Model.Enums.CarrierType)">
+            <summary>
+            读取运输商所有单号描述
+            </summary>
+            <param name="carrier">运输商</param>
+            <returns>单号描述</returns>
+        </member>
+        <member name="M:YQTrackV6.WebLib.Xeger.NumberDescHelper.ReadNumberDescHashCode(YQTrackV6.WebLib.Model.Enums.CarrierType)">
+            <summary>
+            读取运输商所有单号描述哈希代码,Key为单号描述,Value为哈希代码
+            </summary>
+            <param name="carrier">运输商</param>
+            <returns>单号描述哈希代码</returns>
+        </member>
+        <member name="M:YQTrackV6.WebLib.Xeger.NumberDescHelper.FindNumberDesc(YQTrackV6.WebLib.Model.Enums.CarrierType,System.String)">
+            <summary>
+            查找单号描述,查找不到返回空字符串
+            </summary>
+            <param name="carrier">运输商</param>
+            <param name="number">单号</param>
+            <returns>单号描述</returns>
+        </member>
+        <member name="M:YQTrackV6.WebLib.Xeger.NumberDescHelper.FindNumberDescHashCode(YQTrackV6.WebLib.Model.Enums.CarrierType,System.String)">
+            <summary>
+            查找单号描述哈希代码,查找不到返回0
+            </summary>
+            <param name="carrier">运输商</param>
+            <param name="number">单号</param>
+            <returns>哈希代码</returns>
+        </member>
+        <member name="M:YQTrackV6.WebLib.Xeger.NumberDescHelper.GenarateNumberSample(YQTrackV6.WebLib.Model.Enums.CarrierType)">
+            <summary>
+            生成随机示例单号,如果没有将生成123456789
+            </summary>
+            <param name="carrier">运输商</param>
+            <returns>示例单号</returns>
+        </member>
+        <member name="M:YQTrackV6.WebLib.Xeger.NumberDescHelper.FormatNumberDesc(System.String)">
+            <summary>
+            将单号描述格式化,连续数字每3位隔一个空格
+            </summary>
+            <param name="numberDesc">单号描述</param>
+            <returns>格式化后结果</returns>
+        </member>
+        <member name="M:YQTrackV6.WebLib.Xeger.NumberDescHelper.GetHashCode(System.String)">
+            <summary>
+            生成字符串固定的Hash代码
+            </summary>
+            <param name="value">需要生成Hash的字符串</param>
+            <returns>Hash代码</returns>
+        </member>
+        <member name="T:YQTrackV6.WebLib.Xeger.XegerExt">
+            <summary>
+            Xeger扩展类
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.WebLib.Xeger.XegerExt.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="regex">正值表达式字符串</param>
+        </member>
+        <member name="M:YQTrackV6.WebLib.Xeger.XegerExt.Generate">
+            <summary>
+            生成随机示例
+            </summary>
+            <returns>随机示例</returns>
+        </member>
+        <member name="M:YQTrackV6.WebLib.Xeger.XegerExt.GenerateAll">
+            <summary>
+            生成模板示例
+            </summary>
+            <returns>模板示例集合</returns>
+        </member>
+        <member name="M:YQTrackV6.WebLib.Xeger.XegerExt.GetRandomInt(System.Int32,System.Int32)">
+            <summary>
+            Generates a random number within the given bounds.
+            </summary>
+            <param name="min">The minimum number (inclusive).</param>
+            <param name="max">The maximum number (inclusive).</param>
+            <returns>A random number in the given range.</returns>
+        </member>
+    </members>
+</doc>

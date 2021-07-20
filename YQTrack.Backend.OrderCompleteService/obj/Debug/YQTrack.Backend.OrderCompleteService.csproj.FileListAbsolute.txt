@@ -1,0 +1,9 @@
+D:\Work\YQTrack.Backend.OrderCompleteService\0-Src\0.4-Service\YQTrack.Backend.OrderCompleteService.HostRun\bin\Debug\Run\YQTrack.Backend.OrderCompleteService.dll
+D:\Work\YQTrack.Backend.OrderCompleteService\0-Src\0.4-Service\YQTrack.Backend.OrderCompleteService.HostRun\bin\Debug\Run\YQTrack.Backend.OrderCompleteService.pdb
+D:\Work\YQTrack.Backend.OrderCompleteService\0-Src\0.4-Service\YQTrack.Backend.OrderCompleteService\obj\Debug\YQTrack.Backend.OrderCompleteService.Properties.Resources.resources
+D:\Work\YQTrack.Backend.OrderCompleteService\0-Src\0.4-Service\YQTrack.Backend.OrderCompleteService\obj\Debug\YQTrack.Backend.OrderCompleteService.csproj.GenerateResource.cache
+D:\Work\YQTrack.Backend.OrderCompleteService\0-Src\0.4-Service\YQTrack.Backend.OrderCompleteService\obj\Debug\YQTrack.Backend.OrderCompleteService.csproj.CoreCompileInputs.cache
+D:\Work\YQTrack.Backend.OrderCompleteService\0-Src\0.4-Service\YQTrack.Backend.OrderCompleteService\obj\Debug\YQTrack.Backend.OrderCompleteService.csproj.CopyComplete
+D:\Work\YQTrack.Backend.OrderCompleteService\0-Src\0.4-Service\YQTrack.Backend.OrderCompleteService\obj\Debug\YQTrack.Backend.OrderCompleteService.dll
+D:\Work\YQTrack.Backend.OrderCompleteService\0-Src\0.4-Service\YQTrack.Backend.OrderCompleteService\obj\Debug\YQTrack.Backend.OrderCompleteService.pdb
+D:\Work\YQTrack.Backend.OrderCompleteService\0-Src\0.4-Service\YQTrack.Backend.OrderCompleteService\obj\Debug\YQTrack.Backend.OrderCompleteService.csproj.AssemblyReference.cache

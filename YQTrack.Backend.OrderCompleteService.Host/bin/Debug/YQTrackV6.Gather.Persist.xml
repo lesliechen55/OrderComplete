@@ -1,0 +1,595 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YQTrackV6.Gather.Persist</name>
+    </assembly>
+    <members>
+        <member name="M:YQTrackV6.Gather.Persist.Cache.SentinelRedisProxy.GetTrackInfo(System.String,System.String,System.Boolean)">
+            <summary>
+            获取完成的缓存数据(主站+子站)
+            </summary>
+            <param name="key1">主站缓存键</param>
+            <param name="key2">子站缓存键</param>
+            <param name="key2IsRefrence">子站是否参考键</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.Cache.SentinelRedisProxy.GetLastEvent(System.String)">
+            <summary>
+            获取单个跟踪单号最后事件及基本信息
+            </summary>
+            <param name="hashKey">需要获取跟踪事件结果的hash对象键</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.Cache.SentinelRedisProxy.LoadUserTrackModeFromCacheAndMarkFinish(System.String,System.TimeSpan)">
+            <summary>
+            读取用户跟踪信息
+            </summary>
+            <param name="number">缓存KEY</param>
+            <param name="exprie">过期时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.Cache.SentinelRedisProxy.WriteUserTrackToCache(System.String,System.Collections.Generic.KeyValuePair{System.String,System.String},System.DateTime,System.Int64,System.Int64,System.TimeSpan)">
+            <summary>
+            保存用户跟踪信息到缓存
+            </summary>
+            <param name="number">单号</param>
+            <param name="value">KeyValuePair(key,value) key:trackinfoid  value:{"uid":userid,"n":node,"d":db,"t":table}</param>
+            <param name="lastTime">现在时间utc</param>
+            <param name="iticks">采集中，超过最后更新时间多少秒需要重新采集</param>
+            <param name="eticks">采集完成，超过最后更新时间多少秒需要重新采集</param>
+            <param name="expire">过期时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.Cache.SentinelRedisProxy.MarkUserTrack(System.String,System.Boolean,System.DateTime,System.TimeSpan)">
+            <summary>
+            标记信息
+            </summary>
+            <param name="number"></param>
+            <param name="isFinish"></param>
+            <param name="lastTime"></param>
+            <param name="expire">过期时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.Cache.SentinelRedisProxy.DelUserTrackInfo(System.String,System.Int64)">
+            <summary>
+            删除TrackInfo
+            </summary>
+            <param name="number"></param>
+            <param name="trackInfoId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YQTrackV6.Gather.Persist.LogDefine">
+            <summary>
+            日志信息定义
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.LogDefine.QueryDBTrackDataException">
+            <summary>
+            读取数据库异常
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.LogDefine.QueryDBTrackDataExecute">
+            <summary>
+            执行数据库查询
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.LogDefine.QueryTrackDataFromDb">
+            <summary>
+            读取数据库
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.LogDefine.QueryTrackDataFromDbOk">
+            <summary>
+            读取数据库Ok
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.LogDefine.CacheWriteError">
+            <summary>
+            写入缓存错误
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.LogDefine.CacheWriteException">
+            <summary>
+            写入缓存异常
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.LogDefine.CacheWriteExceptionWithMethod">
+            <summary>
+            写入缓存异常
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.LogDefine.CacheReadException">
+            <summary>
+            读出缓存错误
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.LogDefine.CacheOperationException">
+            <summary>
+            缓存操作异常
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.LogDefine.CacheDeserializeError">
+            <summary>
+            反序列化错误
+            </summary>
+        </member>
+        <member name="T:YQTrackV6.Gather.Persist.PerfCounterSql">
+            <summary>
+            计数器
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.PerfCounterSql.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.Gather.Persist.PerfCounterSql.Default">
+            <summary>
+            单例
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.PerfCounterSql.AddSuccess">
+            <summary>
+            增加操作成功计数器值
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.PerfCounterSql.AddException">
+            <summary>
+            增加操作失败计数器值
+            </summary>
+        </member>
+        <member name="T:YQTrackV6.Gather.Persist.PerfCounterRedis">
+            <summary>
+            计数器
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.PerfCounterRedis.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.Gather.Persist.PerfCounterRedis.Default">
+            <summary>
+            单例
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.PerfCounterRedis.AddTrackSuccess">
+            <summary>
+            增加操作成功计数器值
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.PerfCounterRedis.AddTrackException">
+            <summary>
+            增加操作失败计数器值
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.PerfCounterRedis.AddHisSuccess">
+            <summary>
+            增加操作成功计数器值
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.PerfCounterRedis.AddHisException">
+            <summary>
+            增加操作失败计数器值
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.PerfCounterRedis.AddUserSuccess">
+            <summary>
+            增加操作成功计数器值
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.PerfCounterRedis.AddUserException">
+            <summary>
+            增加操作失败计数器值
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.PerfCounterRedis.AddSimpleSuccess">
+            <summary>
+            增加操作成功计数器值
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.PerfCounterRedis.AddSimpleException">
+            <summary>
+            增加操作失败计数器值
+            </summary>
+        </member>
+        <member name="T:YQTrackV6.Gather.Persist.Settings.PersistSettingsDefault">
+            <summary>
+            其它
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.Gather.Persist.Settings.PersistSettingsDefault.GatherDataBaseCache">
+            <summary>
+            采集数据库连接串
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.Gather.Persist.Settings.PersistSettingsDefault.RedisClusterNodes">
+            <summary>
+            Redis sentinel 集群节点配置
+            </summary>
+        </member>
+        <member name="T:YQTrackV6.Gather.Persist.Settings.PersistSettingsDefine">
+            <summary>
+            设置名定义
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.Settings.PersistSettingsDefine.DefRedisClusterNodes">
+            <summary>
+            Redis sentinel 集群节点配置
+            </summary>
+        </member>
+        <member name="T:YQTrackV6.Gather.Persist.InitFlags">
+            <summary>
+            缓存操作类初始化标志集合
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.InitFlags.Track">
+            <summary>
+            采集结果跟踪信息
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.InitFlags.History">
+            <summary>
+            运输商历史信息
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.InitFlags.Compact">
+            <summary>
+            紧凑型跟踪信息
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.InitFlags.Register">
+            <summary>
+            用户单号注册信息
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.InitFlags.All">
+            <summary>
+            所有信息
+            </summary>
+        </member>
+        <member name="T:YQTrackV6.Gather.Persist.TrackCacheHelperExt">
+            <summary>
+            跟踪缓存处理相关辅助类，使用之前必须先进行初始化
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.TrackCacheHelperExt.InitTrackInfoExpireTime">
+            <summary>
+            初始化跟踪信息缓存过期时间,5分钟
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.TrackCacheHelperExt.GlobalTrackInfoExpireTime">
+            <summary>
+            采集结果跟踪信息缓存过期时间,5小时
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.TrackCacheHelperExt.SimplifyTrackInfoExpireTime">
+            <summary>
+            精简版跟踪缓存,供用户后台列表展示显示用,50小时
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.TrackCacheHelperExt.CarrierHistoryExpireTime">
+            <summary>
+            运输商历史单号信息缓存过期时间,7天
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.TrackCacheHelperExt.UserInfoCacheExprieTime">
+            <summary>
+            设置采集结果用户注册订单缓存过期时间
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.TrackCacheHelperExt.NullExpireTime">
+            <summary>
+            采集为Null过期时间,1小时
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.TrackCacheHelperExt.ProcessErrorExpireTime">
+            <summary>
+            采集为ProcessError过期时间,1小时
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.TrackCacheHelperExt._KeyGatherTime">
+            <summary>
+            采集时间缓存键
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.TrackCacheHelperExt._KeyHistoryPrefix">
+            <summary>
+            历史运输商缓存键前缀
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.TrackCacheHelperExt._KeyCompactPrefix">
+            <summary>
+            紧凑版缓存键前缀
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.TrackCacheHelperExt._KeyRegisterPrefix">
+            <summary>
+            注册缓存键前缀
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.Register">
+            <summary>
+            配置注册入口，需要在配置加载之前注册
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.Init(YQTrackV6.Gather.Persist.InitFlags)">
+            <summary>
+            缓存初始化,需要在配置加载之后进行初始化
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.SaveCarrierHistoryToCache(YQTrackV6.Track.Model.Models.CarrierTrackHistoryMode,System.Nullable{System.Boolean})">
+            <summary>
+            将单号对应的运输商信息写入Cache,便于下次直接处理
+            </summary>
+            <param name="mode">写入缓存的数据模型</param>
+            <param name="isPrimary">是否主站</param>
+            <returns>缓存是否写入成功</returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.LoadCarrierTrackHistoryFromCache(System.String)">
+            <summary>
+            从缓存获取数据
+            </summary>
+            <param name="number">运输单号</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.PaserHistoryModeDictionary(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.String)">
+            <summary>
+            解析运输商历史Hash缓存对象为模型
+            </summary>
+            <param name="cache">缓存项</param>
+            <param name="number">单号</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.GetHashHistoryProperties(YQTrackV6.Track.Model.Models.CarrierTrackHistoryMode,System.Nullable{System.Boolean})">
+            <summary>
+            获取采集结果缓存属性
+            </summary>
+            <param name="value">运输商历史缓存模型</param>
+            <param name="isPrimary">是否主站</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.SaveFirstTrackDataToCache(System.String,YQTrackV6.Track.Model.Models.TrackCacheMode,System.Nullable{System.TimeSpan})">
+            <summary>
+            保存第一运输商缓存信息
+            </summary>
+            <param name="keyName">第一运输商缓存Key</param>
+            <param name="value">跟踪信息缓存模型</param>
+            <param name="expire">超时时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.SaveSecondTrackDataToCache(System.String,System.String,YQTrackV6.Track.Model.Models.TrackCacheMode,System.Nullable{System.TimeSpan})">
+            <summary>
+            保存第二运输商缓存信息
+            </summary>
+            <param name="secondKeyName">第二运输商缓存Key</param>
+            <param name="autoKeyName">第二运输商自动缓存参考Key</param>
+            <param name="value">缓存数据</param>
+            <param name="expire">超时时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.SaveTrackLastDataToCache(System.String,YQTrackV6.Track.Model.Models.TrackCacheMode)">
+            <summary>
+            写入最后事件和妥投时效
+            </summary>
+            <param name="keyName">最后事件缓存Key</param>
+            <param name="value">跟踪信息缓存模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.LoadTrackInfoFromCache(YQTrackV6.Track.Model.Models.GatherTaskQueueMode,System.Func{System.String,System.String},System.Func{YQTrackV6.Track.Model.Models.TrackCacheMode,YQTrackV6.WebLib.Model.Enums.CarrierType})">
+            <summary>
+            获取跟踪缓存信息并根据需要初始化
+            </summary>
+            <param name="task">任务模型</param>
+            <param name="getGttCountry">通过GTT查找国家委托</param>
+            <param name="findSecondCarrier">查找第二运输商委托</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.LoadTrackInfoFromCache(YQTrackV6.Track.Model.Models.GatherTaskQueueMode)">
+            <summary>
+            从缓存加载跟踪数据
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.GetTrackLastDataFromCache(YQTrackV6.Track.Model.Models.TrackParamMode[])">
+            <summary>
+            根据订单基本信息获取订单跟踪基本信息
+            </summary>
+            <param name="tracks">待跟踪的订单基本信息数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.InitGatherCache(YQTrackV6.Track.Model.Models.GatherTaskQueueMode)">
+            <summary>
+            初始化强制直接提交主站子站采集请求的采集状态缓存
+            </summary>
+            <param name="task">采集请求的任务</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.LoadTrackInfoFromDb(YQTrackV6.Track.Model.Models.GatherTaskQueueMode)">
+            <summary>
+            从数据提取跟踪信息
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.InitGatherCache(YQTrackV6.Track.Model.Models.GatherTaskQueueMode,YQTrackV6.Track.Model.Models.TrackCacheMode,System.Boolean)">
+            <summary>
+            判断并初始化缓存
+            </summary>
+            <param name="task">需要处理的采集任务</param>
+            <param name="result">目前缓存已有的数据</param>
+            <param name="initFirstResult">是否需要初始化第一运输商信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.IsSecondAutoKeyExist(YQTrackV6.Track.Model.Models.GatherTaskQueueMode)">
+            <summary>
+            是否存在自动映射key
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.WriteMapKey(System.String,System.String)">
+            <summary>
+            写入自动计算和运输商的映射Key
+            </summary>
+            <param name="key"></param>
+            <param name="mapValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.SaveGatherTimeToCache(System.Object)">
+            <summary>
+            将运输商对应的采集时间信息写入Cache
+            </summary>
+            <param name="value"></param>
+            <returns>缓存是否写入成功</returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.LoadGatherTimeFromCache">
+            <summary>
+            从缓存获取运输商采集时间数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.GetHashCacheProperties(YQTrackV6.Track.Model.Models.TrackCacheMode,System.Boolean)">
+            <summary>
+            获取采集结果缓存属性
+            </summary>
+            <param name="value"></param>
+            <param name="isPrimary"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.PaserCacheModeDictionary(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.String)">
+            <summary>
+            解析Hash缓存对象为模型
+            </summary>
+            <param name="cache">缓存项</param>
+            <param name="number">单号</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.GetFirstCarrierProperties(YQTrackV6.Track.Model.Models.TrackCacheMode)">
+             <summary>
+            主站相关属性集合
+             </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.GetSecondCarrierProperties(YQTrackV6.Track.Model.Models.TrackCacheMode)">
+            <summary>
+            子站相关属性缓存集合
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.LoadUserTrackModeFromCacheAndMarkFinish(System.String)">
+            <summary>
+            读取用户跟踪信息
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.WriteUserTrackToCache(System.String,System.Collections.Generic.KeyValuePair{System.String,System.String},System.DateTime,System.Int64,System.Int64)">
+            <summary>
+            保存用户跟踪信息到缓存
+            </summary>
+            <param name="number">跟踪单号</param>
+            <param name="value">跟踪用户相关信息</param>
+            <param name="lastTime">现在UTC时间</param>
+            <param name="iticks">采集中，超过最后更新时间多少秒需要重新采集</param>
+            <param name="eticks">采集完成，超过最后更新时间多少秒需要重新采集</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.MarkUserTrack(System.String,System.Boolean,System.DateTime)">
+            <summary>
+             标记用户跟踪信息
+            </summary>
+            <param name="number">跟踪单号</param>
+            <param name="isFinish">是否完成</param>
+            <param name="lastTime">现在UTC时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackCacheHelperExt.DelUserTrackInfo(System.String,System.Int64)">
+            <summary>
+            删除Hash的属性字段
+            </summary>
+            <param name="number">跟踪单号</param>
+            <param name="trackInfoId">跟踪信息标识Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:YQTrackV6.Gather.Persist.TrackDBHelper">
+            <summary>
+            跟踪信息数据库操作辅助类
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Gather.Persist.TrackDBHelper._MssqlConnectionString">
+            <summary>
+            数据库连接串
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackDBHelper.Init(System.String)">
+            <summary>
+            数据库连接串初始化
+            </summary>
+            <param name="connectionString"></param>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackDBHelper.LoadTrackDataFromDB(System.String,System.Nullable{System.Int32})">
+            <summary>
+            从DB获取整个跟踪信息数据对象实体
+            </summary>
+            <param name="number">跟踪单号</param>
+            <param name="webType">第一运输商类型代码</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackDBHelper.LoadTrackDataFromDB(System.String,System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            从DB获取缓存的跟踪数据
+            </summary>
+            <param name="number">单号</param>
+            <param name="type">数据类型(0:所有数据,1:主站数据,2:子站数据)</param>
+            <param name="webType">运输商类型代码</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackDBHelper.LoadTrackDataFromDBAsync(System.String,System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            异步从DB获取缓存的跟踪数据
+            </summary>
+            <param name="number"></param>
+            <param name="type"></param>
+            <param name="webType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackDBHelper.GetV5TrackData(System.Data.SqlClient.SqlDataReader,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="type">要获取数据类型0:主站子站,1:主站,2:子站</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.TrackDBHelper.GetV5TrackDataFromDB(System.String,System.Int32,System.Func{System.Data.SqlClient.SqlDataReader,System.Int32,YQTrackV6.Track.Model.Models.TrackCacheMode})">
+            <summary>
+            从数据库提取跟踪信息
+            </summary>
+            <param name="number">单号</param>
+            <param name="type">数据类型</param>
+            <param name="func">结果处理委托</param>
+            <returns></returns>
+        </member>
+        <member name="T:YQTrackV6.Gather.Persist.Ziplib.GZipHelper">
+            <summary>
+            GZip的压缩解压辅助类
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.Ziplib.GZipHelper.DeCompress(System.Byte[])">
+            <summary>
+            解压缩对象
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.Gather.Persist.Ziplib.GZipHelper.Compress(System.Object)">
+            <summary>
+            压缩对象
+            </summary>
+            <param name="value">待压缩的对象</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

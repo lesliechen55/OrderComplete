@@ -1,0 +1,68 @@
+﻿2021-07-16 11:39:56,406 [0] INFO  seller.ordercompleteService - 日志, 初始化LoggerSystem成功
+2021-07-16 11:39:56,418 [0] INFO  seller.ordercompleteService - 日志, 没有初始化LoggerRecordData, 调用记录日志将忽略
+2021-07-16 11:39:56,418 [0] INFO  seller.ordercompleteService - 开始启动
+2021-07-16 11:39:57,650 [0] INFO  seller.ordercompleteService - 设置加载成功(数据库)
+2021-07-16 11:39:57,754 [0] INFO  seller.ordercompleteService - 集群连接:{"keyOrder":{"node1":3,"node2":1,"node3":2},"result":["amqp://192.168.1.214:5671","amqp://192.168.1.214:5672","amqp://192.168.1.214:5673"]}
+2021-07-16 11:40:01,720 [0] INFO  seller.ordercompleteService - 已存在计数器类别无需创建, Name:YQ-RabbitMQ.Publish
+2021-07-16 11:40:01,720 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:SendQueueSuccess, Type:NumberOfItems64
+2021-07-16 11:40:01,720 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:SendQueueError, Type:NumberOfItems64
+2021-07-16 11:40:01,720 [0] INFO  seller.ordercompleteService - 初始化计数器类别完成, Name:YQ-RabbitMQ.Publish, IsSingle:True
+2021-07-16 11:40:01,722 [0] INFO  seller.ordercompleteService - 已存在计数器类别无需创建, Name:YQ-RabbitMQ.Connection
+2021-07-16 11:40:01,722 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:ConnectionShutdown, Type:NumberOfItems64
+2021-07-16 11:40:01,722 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:ConnectionUnblocked, Type:NumberOfItems64
+2021-07-16 11:40:01,722 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:CallbackException, Type:NumberOfItems64
+2021-07-16 11:40:01,722 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:ConnectionBlocked, Type:NumberOfItems64
+2021-07-16 11:40:01,722 [0] INFO  seller.ordercompleteService - 初始化计数器类别完成, Name:YQ-RabbitMQ.Connection, IsSingle:False
+2021-07-16 11:40:01,723 [0] INFO  seller.ordercompleteService - 消息队列概要:初始化完成，主机amqp://192.168.1.214:5671
+2021-07-16 11:40:01,729 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":8,"entityCount":0}
+2021-07-16 11:40:01,734 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller"]
+2021-07-16 11:40:01,734 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":1,"entityCount":null}
+2021-07-16 11:40:01,734 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller","user"]
+2021-07-16 11:40:01,734 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":1,"entityCount":null}
+2021-07-16 11:40:01,734 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller","user","log"]
+2021-07-16 11:40:01,735 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":2,"entityCount":14}
+2021-07-16 11:40:01,735 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller","user","log","buyer"]
+2021-07-16 11:40:01,735 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":4,"entityCount":0}
+2021-07-16 11:40:01,735 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller","user","log","buyer","sellermessage"]
+2021-07-16 11:40:01,803 [0] INFO  seller.ordercompleteService - InitTaskAssigned:路由Key:OrderRoutes0,index:0...
+2021-07-16 11:40:01,803 [0] INFO  seller.ordercompleteService - InitTaskAssigned:路由Key:OrderRoutes1,index:1...
+2021-07-16 11:40:01,803 [0] INFO  seller.ordercompleteService - InitTaskAssigned:路由Key:OrderRoutes2,index:2...
+2021-07-16 11:40:01,803 [0] INFO  seller.ordercompleteService - InitTaskAssigned:路由Key:OrderRoutes3,index:3...
+2021-07-16 11:40:01,814 [0] INFO  seller.ordercompleteService - InitNode:{"nodeId":"192.168.1.55_18908"}
+2021-07-16 11:40:01,821 [0] INFO  seller.ordercompleteService - 已存在计数器类别无需创建, Name:YQ-Schedule.TaskCoordinator.seller.order.complete.service.task
+2021-07-16 11:40:01,822 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:SqlExecError, Type:NumberOfItems64
+2021-07-16 11:40:01,822 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:Reassigned, Type:NumberOfItems64
+2021-07-16 11:40:01,822 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:ProcessError, Type:NumberOfItems64
+2021-07-16 11:40:01,822 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:Assigned, Type:NumberOfItems64
+2021-07-16 11:40:01,822 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:Canceled, Type:NumberOfItems64
+2021-07-16 11:40:01,822 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:Heartbeat, Type:NumberOfItems64
+2021-07-16 11:40:01,822 [0] INFO  seller.ordercompleteService - 初始化计数器类别完成, Name:YQ-Schedule.TaskCoordinator.seller.order.complete.service.task, IsSingle:True
+2021-07-16 11:40:01,842 [0] INFO  seller.ordercompleteService - Register:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_18908","taskList":["OrderRoutes0","OrderRoutes1","OrderRoutes2","OrderRoutes3"]}
+2021-07-16 11:40:01,844 [0] INFO  seller.ordercompleteService - DoAssign:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_18908"}
+2021-07-16 11:40:01,857 [0] INFO  seller.ordercompleteService - NodeChanged:{"current":4,"lastest":0}
+2021-07-16 11:40:01,861 [0] INFO  seller.ordercompleteService - TaskCoordinator_OnTaskAssigned:存在任务IdOrderRoutes0,路由Id0:{"TaskInfo":{"NodeId":"192.168.1.55_18908","TaskId":"OrderRoutes0","TaskExtra":null}}
+2021-07-16 11:40:01,862 [0] INFO  seller.ordercompleteService - TaskAssigned:{"TaskId":"OrderRoutes0"}
+2021-07-16 11:40:01,862 [0] INFO  seller.ordercompleteService - DoAssign:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_18908"}
+2021-07-16 11:40:01,878 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 11:40:01,905 [0] INFO  seller.ordercompleteService - 连接建立:[{"HostName":"192.168.1.214","Port":5672,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}},{"HostName":"192.168.1.214","Port":5673,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}},{"HostName":"192.168.1.214","Port":5671,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}}]
+2021-07-16 11:40:01,908 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=11,mode=2
+2021-07-16 11:40:01,955 [0] INFO  seller.ordercompleteService - 获取连接通道:1
+2021-07-16 11:40:01,977 [0] INFO  seller.ordercompleteService - 声明队列完成:{"ExchName":"Seller.OrderComplete","QueueName":"Seller.OrderComplete.Service2","AutoAck":false,"MaxConsumer":2,"ExpireTime":"01:00:00","DeadQueueName":null}
+2021-07-16 11:40:01,998 [0] INFO  seller.ordercompleteService - 消费者注册:{"Queue":"Seller.OrderComplete.Service2","ConsumerTag":"amq.ctag-NprRVFLqjW8dOu9AKLnBsA"}
+2021-07-16 11:40:02,003 [0] INFO  seller.ordercompleteService - 消费者注册:{"Queue":"Seller.OrderComplete.Service2","ConsumerTag":"amq.ctag-EUP-oaOhVihfW8FefBWy-w"}
+2021-07-16 11:40:02,003 [0] INFO  seller.ordercompleteService - 消息订阅完成:{"Queue":"Seller.OrderComplete.Service2"}
+2021-07-16 11:40:02,528 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=11,mode=2
+2021-07-16 11:40:02,529 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=11
+2021-07-16 11:40:11,533 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=11
+2021-07-16 11:40:31,887 [0] INFO  seller.ordercompleteService - NodeChanged:{"current":3,"lastest":4}
+2021-07-16 11:41:01,873 [0] INFO  seller.ordercompleteService - DoAssign:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_18908"}
+2021-07-16 11:41:01,877 [0] INFO  seller.ordercompleteService - TaskCoordinator_OnTaskAssigned:存在任务IdOrderRoutes2,路由Id2:{"TaskInfo":{"NodeId":"192.168.1.55_18908","TaskId":"OrderRoutes2","TaskExtra":null}}
+2021-07-16 11:41:01,877 [0] INFO  seller.ordercompleteService - TaskAssigned:{"TaskId":"OrderRoutes2"}
+2021-07-16 11:42:01,902 [0] INFO  seller.ordercompleteService - DoAssign:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_18908"}
+2021-07-16 11:43:05,184 [0] INFO  seller.ordercompleteService - NodeChanged:{"current":4,"lastest":3}
+2021-07-16 11:43:05,185 [0] INFO  seller.ordercompleteService - TaskCoordinator_OnTaskCanceled:{"TaskAssign":{"TaskInfo":{"NodeId":"192.168.1.55_18908","TaskId":"OrderRoutes0","TaskExtra":null}},"Keys":["OrderRoutes0","OrderRoutes2"]}
+2021-07-16 11:43:05,185 [0] INFO  seller.ordercompleteService - TaskCoordinator_OnTaskCanceled_End:["OrderRoutes2"]
+2021-07-16 11:43:05,185 [0] INFO  seller.ordercompleteService - TaskCanceled:{"TaskId":"OrderRoutes0"}
+2021-07-16 11:44:05,200 [0] INFO  seller.ordercompleteService - DoAssign:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_18908"}
+2021-07-16 11:46:07,729 [0] INFO  seller.ordercompleteService - NodeChanged:{"current":3,"lastest":4}
+2021-07-16 11:47:07,743 [0] INFO  seller.ordercompleteService - DoAssign:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_18908"}

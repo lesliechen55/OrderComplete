@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YQTrackV6.Queue</name>
+    </assembly>
+    <members>
+        <member name="T:YQTrackV6.Queue.LogDefine">
+            <summary>
+            消息队列日志类型定义
+            </summary>
+        </member>
+        <member name="T:YQTrackV6.Queue.Msmq">
+            <summary>
+            消息队列操作类,需要判断返回对象为空情况(消息错误)
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq.#ctor(System.String)">
+            <summary>
+            构造函数,如果抛出异常程序不可启动
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq.#ctor(System.String,System.Messaging.MessageQueueTransactionType)">
+            <summary>
+            构造函数,如果抛出异常程序不可启动,路径格式为
+            ".\\Private$\\ipProxyAnalytics"
+            或者
+            "FormatName:Direct=TCP:192.168.1.108\\private$\\ipProxyAnalytics"
+            </summary>
+            <param name="queuePath">队列路径</param>
+            <param name="transactionType">消息类型</param>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq.GetPrivateQueueNames">
+            <summary>
+            获取本地私有消息队列名称列表
+            </summary>
+            <returns>队列名称列表</returns>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq.Remove(System.String)">
+            <summary>
+            移除消息队列
+            </summary>
+        </member>
+        <member name="T:YQTrackV6.Queue.Msmq`1">
+            <summary>
+            消息队列操作类,需要判断返回对象为空情况(消息错误)
+            </summary>
+            <typeparam name="T">消息对象类型,使用Newtonsoft.Json序列化</typeparam>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.#cctor">
+            <summary>
+            静态构造
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.TimerProcess(System.Object)">
+            <summary>
+            队列异常后定时重新初始化队列实例
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.#ctor(System.String)">
+            <summary>
+            构造函数,如果抛出异常程序不可启动
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.#ctor(System.String,System.Messaging.MessageQueueTransactionType)">
+            <summary>
+            构造函数,如果抛出异常程序不可启动,路径格式为
+            ".\\Private$\\ipProxyAnalytics"
+            或者
+            "FormatName:Direct=TCP:192.168.1.108\\private$\\ipProxyAnalytics"
+            </summary>
+            <param name="queuePath">队列路径</param>
+            <param name="transactionType">消息类型</param>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.Dispose(System.Boolean)">
+            <summary>
+            释放资源
+            </summary>
+            <param name="disposing">为true则释放托管资源和非托管资源,为false则仅释放非托管资源.</param>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Queue.Msmq`1._Counter">
+            <summary>
+            消息队列系统计数器
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Queue.Msmq`1._IsDispose">
+            <summary>
+            是否已经释放
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.Queue.Msmq`1.QueuePathOrg">
+            <summary>
+            消息队列名称(原始)
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.Queue.Msmq`1.QueuePath">
+            <summary>
+            消息队列名称(处理后)
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.Queue.Msmq`1.TransactionType">
+            <summary>
+            /消息队列类型
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Queue.Msmq`1._CounterInstanceName">
+            <summary>
+            消息队列计数器实例名
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Queue.Msmq`1._Queue">
+            <summary>
+            消息队列实例
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Queue.Msmq`1._Timer">
+            <summary>
+            异常后定时重新初始化队列
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.Queue.Msmq`1._ReinitInterval">
+            <summary>
+            重新实例化队列时间间隔(秒)
+            </summary>
+        </member>
+        <member name="E:YQTrackV6.Queue.Msmq`1.MessageArrived">
+            <summary>
+            消息到达事件
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.OnMessageArrived(YQTrackV6.Queue.QueueEventArgs{`0})">
+            <summary>
+            触发消息到达事件
+            </summary>
+            <param name="e">事件</param>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.GetCount">
+            <summary>
+            获取消息队列中待处理消息数量
+            </summary>
+            <returns>
+            返回自然数表示计数正常,-1表示有异常发生或者不是本机的队列
+            </returns>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.ClearMessage">
+            <summary>
+            清空队列的所有消息
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.SendMessage(`0)">
+            <summary>
+            通过消息队列发送消息
+            </summary>
+            <param name="value">消息对象</param>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.ReceiveMessage">
+            <summary>
+            同步(阻塞)模式接收队列消息,接收完后从队列中删除
+            </summary>
+            <returns>消息对象</returns>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.ReceiveMessage(System.Int32)">
+            <summary>
+            同步(阻塞)模式接收队列消息,接收完后从队列中删除
+            </summary>
+            <param name="timeout">阻塞超时时间(秒),0表示一直阻塞</param>
+            <returns>消息对象</returns>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.StartAsyncReceive">
+            <summary>
+            队列实例化之后,执行该步骤开始异步接收队列消息
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Queue.Msmq`1.ReceiveCompleted(System.Object,System.Messaging.ReceiveCompletedEventArgs)">
+            <summary>
+            异步接收到消息
+            </summary>
+            <param name="sender">消息队列源</param>
+            <param name="e">异步接收结果</param>
+        </member>
+        <member name="T:YQTrackV6.Queue.QueueEventArgs`1">
+            <summary>
+            异步消息队列接收响应事件接口类,主要用于异步接收消息是从参数对象中获取消息体MessageBody
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Queue.QueueEventArgs`1.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.Queue.QueueEventArgs`1.#ctor(`0)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="data">数据对象</param>
+        </member>
+        <member name="P:YQTrackV6.Queue.QueueEventArgs`1.Data">
+            <summary>
+            消息事件参数对象
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.Queue.QueueEventArgs`1.Continue">
+            <summary>
+            是否继续接收任务
+            </summary>
+        </member>
+    </members>
+</doc>

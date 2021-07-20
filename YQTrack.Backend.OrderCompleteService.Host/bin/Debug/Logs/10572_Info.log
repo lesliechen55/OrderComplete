@@ -1,0 +1,194 @@
+﻿2021-07-16 12:05:25,779 [0] INFO  seller.ordercompleteService - 日志, 初始化LoggerSystem成功
+2021-07-16 12:05:25,795 [0] INFO  seller.ordercompleteService - 日志, 没有初始化LoggerRecordData, 调用记录日志将忽略
+2021-07-16 12:05:25,795 [0] INFO  seller.ordercompleteService - 开始启动
+2021-07-16 12:05:26,958 [0] INFO  seller.ordercompleteService - 设置加载成功(数据库)
+2021-07-16 12:05:27,053 [0] INFO  seller.ordercompleteService - 集群连接:{"keyOrder":{"node1":3,"node2":1,"node3":2},"result":["amqp://192.168.1.214:5671","amqp://192.168.1.214:5672","amqp://192.168.1.214:5673"]}
+2021-07-16 12:05:31,289 [0] INFO  seller.ordercompleteService - 已存在计数器类别无需创建, Name:YQ-RabbitMQ.Publish
+2021-07-16 12:05:31,289 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:SendQueueSuccess, Type:NumberOfItems64
+2021-07-16 12:05:31,289 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:SendQueueError, Type:NumberOfItems64
+2021-07-16 12:05:31,289 [0] INFO  seller.ordercompleteService - 初始化计数器类别完成, Name:YQ-RabbitMQ.Publish, IsSingle:True
+2021-07-16 12:05:31,291 [0] INFO  seller.ordercompleteService - 已存在计数器类别无需创建, Name:YQ-RabbitMQ.Connection
+2021-07-16 12:05:31,291 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:ConnectionShutdown, Type:NumberOfItems64
+2021-07-16 12:05:31,291 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:ConnectionUnblocked, Type:NumberOfItems64
+2021-07-16 12:05:31,291 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:CallbackException, Type:NumberOfItems64
+2021-07-16 12:05:31,291 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:ConnectionBlocked, Type:NumberOfItems64
+2021-07-16 12:05:31,291 [0] INFO  seller.ordercompleteService - 初始化计数器类别完成, Name:YQ-RabbitMQ.Connection, IsSingle:False
+2021-07-16 12:05:31,292 [0] INFO  seller.ordercompleteService - 消息队列概要:初始化完成，主机amqp://192.168.1.214:5671
+2021-07-16 12:05:31,299 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":8,"entityCount":0}
+2021-07-16 12:05:31,306 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller"]
+2021-07-16 12:05:31,307 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":1,"entityCount":null}
+2021-07-16 12:05:31,307 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller","user"]
+2021-07-16 12:05:31,307 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":1,"entityCount":null}
+2021-07-16 12:05:31,307 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller","user","log"]
+2021-07-16 12:05:31,308 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":2,"entityCount":14}
+2021-07-16 12:05:31,308 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller","user","log","buyer"]
+2021-07-16 12:05:31,308 [0] INFO  seller.ordercompleteService - InitDBShardingConfigBegin:{"DBType":null,"nodeCount":1,"dbCount":4,"entityCount":0}
+2021-07-16 12:05:31,308 [0] INFO  seller.ordercompleteService - InitDBShardingConfigEnd:["seller","user","log","buyer","sellermessage"]
+2021-07-16 12:05:31,438 [0] INFO  seller.ordercompleteService - InitTaskAssigned:路由Key:OrderRoutes0,index:0...
+2021-07-16 12:05:31,438 [0] INFO  seller.ordercompleteService - InitTaskAssigned:路由Key:OrderRoutes1,index:1...
+2021-07-16 12:05:31,438 [0] INFO  seller.ordercompleteService - InitTaskAssigned:路由Key:OrderRoutes2,index:2...
+2021-07-16 12:05:31,438 [0] INFO  seller.ordercompleteService - InitTaskAssigned:路由Key:OrderRoutes3,index:3...
+2021-07-16 12:05:31,447 [0] INFO  seller.ordercompleteService - InitNode:{"nodeId":"192.168.1.55_10572"}
+2021-07-16 12:05:31,450 [0] INFO  seller.ordercompleteService - 已存在计数器类别无需创建, Name:YQ-Schedule.TaskCoordinator.seller.order.complete.service.task
+2021-07-16 12:05:31,450 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:SqlExecError, Type:NumberOfItems64
+2021-07-16 12:05:31,450 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:Reassigned, Type:NumberOfItems64
+2021-07-16 12:05:31,450 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:ProcessError, Type:NumberOfItems64
+2021-07-16 12:05:31,450 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:Assigned, Type:NumberOfItems64
+2021-07-16 12:05:31,450 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:Canceled, Type:NumberOfItems64
+2021-07-16 12:05:31,450 [0] INFO  seller.ordercompleteService - 创建计数器对象, Name:Heartbeat, Type:NumberOfItems64
+2021-07-16 12:05:31,450 [0] INFO  seller.ordercompleteService - 初始化计数器类别完成, Name:YQ-Schedule.TaskCoordinator.seller.order.complete.service.task, IsSingle:True
+2021-07-16 12:05:35,993 [0] INFO  seller.ordercompleteService - Register:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_10572","taskList":["OrderRoutes0","OrderRoutes1","OrderRoutes2","OrderRoutes3"]}
+2021-07-16 12:05:35,995 [0] INFO  seller.ordercompleteService - DoAssign:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_10572"}
+2021-07-16 12:05:36,006 [0] INFO  seller.ordercompleteService - NodeChanged:{"current":3,"lastest":0}
+2021-07-16 12:05:36,014 [0] INFO  seller.ordercompleteService - TaskCoordinator_OnTaskAssigned:存在任务IdOrderRoutes1,路由Id1:{"TaskInfo":{"NodeId":"192.168.1.55_10572","TaskId":"OrderRoutes1","TaskExtra":null}}
+2021-07-16 12:05:36,015 [0] INFO  seller.ordercompleteService - TaskAssigned:{"TaskId":"OrderRoutes1"}
+2021-07-16 12:05:36,015 [0] INFO  seller.ordercompleteService - DoAssign:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_10572"}
+2021-07-16 12:05:36,032 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 12:05:36,056 [0] INFO  seller.ordercompleteService - 连接建立:[{"HostName":"192.168.1.214","Port":5672,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}},{"HostName":"192.168.1.214","Port":5673,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}},{"HostName":"192.168.1.214","Port":5671,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}}]
+2021-07-16 12:05:36,064 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=12,mode=1
+2021-07-16 12:05:36,112 [0] INFO  seller.ordercompleteService - 获取连接通道:1
+2021-07-16 12:05:36,130 [0] INFO  seller.ordercompleteService - 声明队列完成:{"ExchName":"Seller.OrderComplete","QueueName":"Seller.OrderComplete.Service2","AutoAck":false,"MaxConsumer":2,"ExpireTime":"01:00:00","DeadQueueName":null}
+2021-07-16 12:05:36,155 [0] INFO  seller.ordercompleteService - 消费者注册:{"Queue":"Seller.OrderComplete.Service2","ConsumerTag":"amq.ctag-r_xD3s4J-z1hteiRzd6ctw"}
+2021-07-16 12:05:36,163 [0] INFO  seller.ordercompleteService - 消费者注册:{"Queue":"Seller.OrderComplete.Service2","ConsumerTag":"amq.ctag-ne0lmMJYft5883-YF250hw"}
+2021-07-16 12:05:36,165 [0] INFO  seller.ordercompleteService - 消息订阅完成:{"Queue":"Seller.OrderComplete.Service2"}
+2021-07-16 12:05:37,047 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=12,mode=1
+2021-07-16 12:05:37,049 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=12
+2021-07-16 12:05:37,054 [0] INFO  seller.ordercompleteService - 连接建立:[{"HostName":"192.168.1.214","Port":5672,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}},{"HostName":"192.168.1.214","Port":5673,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}},{"HostName":"192.168.1.214","Port":5671,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}}]
+2021-07-16 12:05:37,109 [0] INFO  seller.ordercompleteService - 连接建立:[{"HostName":"192.168.1.214","Port":5672,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}},{"HostName":"192.168.1.214","Port":5673,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}},{"HostName":"192.168.1.214","Port":5671,"Protocol":{"Capabilities":{"publisher_confirms":true,"exchange_exchange_bindings":true,"basic.nack":true,"consumer_cancel_notify":true,"connection.blocked":true,"authentication_failure_close":true},"MajorVersion":0,"MinorVersion":9,"Revision":1,"ApiName":":AMQP_0_9_1","DefaultPort":5672,"Version":{"Major":0,"Minor":9}},"Ssl":{"AcceptablePolicyErrors":0,"CertPassphrase":null,"CertPath":"","CertificateSelectionCallback":null,"CertificateValidationCallback":null,"Certs":null,"Enabled":false,"ServerName":"","Version":192}}]
+2021-07-16 12:05:37,149 [0] INFO  seller.ordercompleteService - 获取连接通道:1
+2021-07-16 12:05:37,154 [0] INFO  seller.ordercompleteService - 声明队列完成:{"ExchName":"seller.track.data.handler","QueueName":"seller.track.data.handler.TransferTrackNo.12.0","AutoAck":false,"MaxConsumer":1,"ExpireTime":"01:00:00","DeadQueueName":null}
+2021-07-16 12:05:46,052 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=12
+2021-07-16 12:06:36,027 [0] INFO  seller.ordercompleteService - DoAssign:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_10572"}
+2021-07-16 12:45:36,038 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 12:45:36,039 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=12,mode=1
+2021-07-16 12:45:36,809 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=12,mode=1
+2021-07-16 12:45:36,809 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=12
+2021-07-16 12:45:45,809 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=12
+2021-07-16 13:25:36,039 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 13:25:36,039 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=12,mode=8
+2021-07-16 13:25:36,422 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=12,mode=8
+2021-07-16 13:25:36,422 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=12
+2021-07-16 13:25:45,422 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=12
+2021-07-16 14:05:36,055 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 14:05:36,055 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=12,mode=4
+2021-07-16 14:05:36,432 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=12,mode=4
+2021-07-16 14:05:36,432 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=12
+2021-07-16 14:05:45,433 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=12
+2021-07-16 14:45:36,057 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 14:45:36,057 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=12,mode=2
+2021-07-16 14:45:36,498 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=12,mode=2
+2021-07-16 14:45:36,498 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=12
+2021-07-16 14:45:45,500 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=12
+2021-07-16 15:16:57,137 [0] INFO  seller.ordercompleteService - NodeChanged:{"current":1,"lastest":3}
+2021-07-16 15:17:57,147 [0] INFO  seller.ordercompleteService - DoAssign:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_10572"}
+2021-07-16 15:17:57,150 [0] INFO  seller.ordercompleteService - TaskCoordinator_OnTaskAssigned:存在任务IdOrderRoutes0,路由Id0:{"TaskInfo":{"NodeId":"192.168.1.55_10572","TaskId":"OrderRoutes0","TaskExtra":null}}
+2021-07-16 15:17:57,150 [0] INFO  seller.ordercompleteService - TaskAssigned:{"TaskId":"OrderRoutes0"}
+2021-07-16 15:18:57,165 [0] INFO  seller.ordercompleteService - DoAssign:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_10572"}
+2021-07-16 15:18:57,168 [0] INFO  seller.ordercompleteService - TaskCoordinator_OnTaskAssigned:存在任务IdOrderRoutes2,路由Id2:{"TaskInfo":{"NodeId":"192.168.1.55_10572","TaskId":"OrderRoutes2","TaskExtra":null}}
+2021-07-16 15:18:57,168 [0] INFO  seller.ordercompleteService - TaskAssigned:{"TaskId":"OrderRoutes2"}
+2021-07-16 15:19:57,181 [0] INFO  seller.ordercompleteService - DoAssign:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_10572"}
+2021-07-16 15:19:57,186 [0] INFO  seller.ordercompleteService - TaskCoordinator_OnTaskAssigned:存在任务IdOrderRoutes3,路由Id3:{"TaskInfo":{"NodeId":"192.168.1.55_10572","TaskId":"OrderRoutes3","TaskExtra":null}}
+2021-07-16 15:19:57,186 [0] INFO  seller.ordercompleteService - TaskAssigned:{"TaskId":"OrderRoutes3"}
+2021-07-16 15:20:57,194 [0] INFO  seller.ordercompleteService - DoAssign:{"Name":"seller.order.complete.service.task","nodeId":"192.168.1.55_10572"}
+2021-07-16 15:25:36,071 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 15:25:36,071 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 15:25:36,071 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 15:25:36,071 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 15:25:36,071 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=12,mode=3
+2021-07-16 15:25:36,793 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=12,mode=3
+2021-07-16 15:25:36,793 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=12
+2021-07-16 15:25:45,794 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=12
+2021-07-16 15:25:54,796 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=11,mode=6
+2021-07-16 15:25:55,250 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=11,mode=6
+2021-07-16 15:25:55,250 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=11
+2021-07-16 15:26:04,251 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=11
+2021-07-16 15:26:13,252 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=13,mode=9
+2021-07-16 15:26:13,791 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=13,mode=9
+2021-07-16 15:26:13,791 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=13
+2021-07-16 15:26:22,792 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=13
+2021-07-16 15:26:31,793 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=14,mode=3
+2021-07-16 15:26:32,437 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=14,mode=3
+2021-07-16 15:26:32,437 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=14
+2021-07-16 15:26:41,439 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=14
+2021-07-16 16:05:36,072 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 16:05:36,072 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 16:05:36,072 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 16:05:36,072 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 16:05:36,072 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=12,mode=0
+2021-07-16 16:05:36,485 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=12,mode=0
+2021-07-16 16:05:36,485 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=12
+2021-07-16 16:05:45,487 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=12
+2021-07-16 16:05:54,489 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=11,mode=8
+2021-07-16 16:05:54,866 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=11,mode=8
+2021-07-16 16:05:54,866 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=11
+2021-07-16 16:06:03,869 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=11
+2021-07-16 16:06:12,870 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=13,mode=7
+2021-07-16 16:06:13,549 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=13,mode=7
+2021-07-16 16:06:13,549 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=13
+2021-07-16 16:06:13,550 [0] INFO  seller.ordercompleteService - 获取连接通道:2
+2021-07-16 16:06:13,555 [0] INFO  seller.ordercompleteService - 声明队列完成:{"ExchName":"seller.track.data.handler","QueueName":"seller.track.data.handler.TransferTrackNo.13.0","AutoAck":false,"MaxConsumer":1,"ExpireTime":"01:00:00","DeadQueueName":null}
+2021-07-16 16:06:22,549 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=13
+2021-07-16 16:06:31,550 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=14,mode=4
+2021-07-16 16:06:31,915 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=14,mode=4
+2021-07-16 16:06:31,915 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=14
+2021-07-16 16:06:40,918 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=14
+2021-07-16 16:45:36,086 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 16:45:36,086 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 16:45:36,086 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 16:45:36,086 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 16:45:36,086 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=12,mode=1
+2021-07-16 16:45:40,804 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=12,mode=1
+2021-07-16 16:45:40,804 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=12
+2021-07-16 16:45:49,806 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=12
+2021-07-16 16:45:58,807 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=11,mode=6
+2021-07-16 16:45:59,221 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=11,mode=6
+2021-07-16 16:45:59,221 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=11
+2021-07-16 16:46:08,224 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=11
+2021-07-16 16:46:17,226 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=13,mode=7
+2021-07-16 16:46:23,603 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=13,mode=7
+2021-07-16 16:46:23,604 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=13
+2021-07-16 16:46:32,606 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=13
+2021-07-16 16:46:41,608 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=14,mode=8
+2021-07-16 16:46:41,929 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=14,mode=8
+2021-07-16 16:46:41,929 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=14
+2021-07-16 16:46:50,932 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=14
+2021-07-16 17:25:36,089 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 17:25:36,089 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 17:25:36,089 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 17:25:36,089 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 17:25:36,089 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=12,mode=9
+2021-07-16 17:25:36,723 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=12,mode=9
+2021-07-16 17:25:36,723 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=12
+2021-07-16 17:25:45,725 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=12
+2021-07-16 17:25:54,728 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=11,mode=9
+2021-07-16 17:25:55,301 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=11,mode=9
+2021-07-16 17:25:55,301 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=11
+2021-07-16 17:26:04,302 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=11
+2021-07-16 17:26:13,305 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=13,mode=5
+2021-07-16 17:26:13,970 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=13,mode=5
+2021-07-16 17:26:13,970 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=13
+2021-07-16 17:26:22,971 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=13
+2021-07-16 17:26:31,972 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=14,mode=4
+2021-07-16 17:26:32,400 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=14,mode=4
+2021-07-16 17:26:32,400 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=14
+2021-07-16 17:26:41,401 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=14
+2021-07-16 18:05:36,103 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 18:05:36,103 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 18:05:36,103 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 18:05:36,103 [0] INFO  seller.ordercompleteService - GetNodeRulesTaskSchedule 执行任务,Seller:YQTrack.Backend.Models.DataRouteModel
+2021-07-16 18:05:36,103 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=12,mode=5
+2021-07-16 18:05:36,778 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=12,mode=5
+2021-07-16 18:05:36,778 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=12
+2021-07-16 18:05:45,780 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=12
+2021-07-16 18:05:54,781 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=11,mode=2
+2021-07-16 18:05:55,139 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=11,mode=2
+2021-07-16 18:05:55,139 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=11
+2021-07-16 18:06:04,141 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=11
+2021-07-16 18:06:13,143 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=13,mode=9
+2021-07-16 18:06:17,049 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=13,mode=9
+2021-07-16 18:06:17,049 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=13
+2021-07-16 18:06:26,050 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=13
+2021-07-16 18:06:35,053 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.nodeId=1,dbno=14,mode=2
+2021-07-16 18:06:35,821 [0] INFO  seller.ordercompleteService - RandomSellerOrderComplateWorkService.DoWorkRandomComplete.执行任务.结束.nodeId=1,dbno=14,mode=2
+2021-07-16 18:06:35,822 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.ExecuteAutoArchivedCurrentUsers 工作,userCount=0,_DBNo=14
+2021-07-16 18:06:44,823 [0] INFO  seller.ordercompleteService - BaseSellerOrderComplateWorkService.RetryErrorUserOrderComplete 工作,UserErrorCount=0,_DBNo=14

@@ -1,0 +1,377 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YQTrackV6.SentinelRedis</name>
+    </assembly>
+    <members>
+        <member name="T:YQTrackV6.SentinelRedis.Config.RedisConfig">
+            <summary>
+            缓存配置
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.SentinelRedis.Config.RedisConfig.Nodes">
+            <summary>
+            配置节点列表
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.SentinelRedis.Config.RedisConfig.Database">
+            <summary>
+            使用的数据库编号(必须设置)
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.Config.RedisConfig.Clone">
+            <summary>
+            克隆一个配置实体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:YQTrackV6.SentinelRedis.Config.RedisNode._Name">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.SentinelRedis.Config.RedisNode.Name">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.SentinelRedis.Config.RedisNode.Config">
+            <summary>
+            节点连接参数配置
+            </summary>
+        </member>
+        <member name="T:YQTrackV6.SentinelRedis.Model.RedisConnection">
+            <summary>
+            RedisConnection
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.Model.RedisConnection.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="configuration">连接字符串</param>
+            <exception cref="T:System.ArgumentNullException">configuration或key为空</exception>
+            <exception cref="T:System.ArgumentException">configuration is empty</exception>
+        </member>
+        <member name="P:YQTrackV6.SentinelRedis.Model.RedisConnection.Configuration">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.SentinelRedis.Model.RedisConnection.Connection">
+            <summary>
+            连接
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.SentinelRedis.Model.RedisConnection.DefaultServer">
+            <summary>
+            默认服务器
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.SentinelRedis.Model.RedisConnection.DefaultDataBase">
+            <summary>
+            默认数据库
+            </summary>
+        </member>
+        <member name="P:YQTrackV6.SentinelRedis.Model.RedisConnection.DictScript">
+            <summary>
+            脚本Hash
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.Model.RedisConnection.Resetting(System.String)">
+            <summary>
+            重置连接
+            </summary>
+            <param name="configuration">连接字符串</param>
+            <exception cref="T:System.ArgumentNullException">configuration is null</exception>
+            <exception cref="T:System.ArgumentException">configuration is empty</exception>
+            <returns>是否重新连接</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.Model.RedisConnection.Dispose(System.Boolean)">
+            <summary>
+            释放资源
+            </summary>
+            <param name="disposing">为true则释放托管资源和非托管资源,为false则仅释放非托管资源.</param>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.Model.RedisConnection.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:YQTrackV6.SentinelRedis.Model.MurmurHash2">
+            <summary>
+            MurmurHash2 ConsistentHash Algorithm
+            </summary>
+        </member>
+        <member name="T:YQTrackV6.SentinelRedis.Model.RedisConsistentHash`1">
+            <summary>
+            https://code.google.com/archive/p/consistent-hash/source/default/source
+            http://www.cnblogs.com/haippy/archive/2011/12/10/2282943.html
+            
+            REDIS一致性Hash算法,初始化虚拟节点分布,计算Key所在的物理节点
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.Model.RedisConsistentHash`1.KeyTag(System.String)">
+            <summary>
+            获取用来计算有效Hash的部分字符串(用{}包裹的非空部分)
+            </summary>
+            <param name="key">需要计算的Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.Model.RedisConsistentHash`1.GetNode(System.String)">
+            <summary>
+            根据缓存Key返回所在的节点名称
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="T:YQTrackV6.SentinelRedis.SentinelRedisControler">
+            <summary>
+            Sentinel模式多组Redis控制器
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.#ctor(YQTrackV6.SentinelRedis.Config.RedisConfig)">
+            <summary>
+            构造函数,需要同步调用,不能多个实例化并行处理，除非传入的参数实例不同
+            </summary>
+            <param name="config">配置</param>
+            <exception cref="T:System.ArgumentNullException">configuration或key为空</exception>
+            <exception cref="T:System.ArgumentException">configuration is empty</exception>
+        </member>
+        <member name="F:YQTrackV6.SentinelRedis.SentinelRedisControler._RedisConnectionList">
+            <summary>
+            Redis连接实例列表
+            </summary>
+        </member>
+        <member name="F:YQTrackV6.SentinelRedis.SentinelRedisControler._RedisNodes">
+            <summary>
+            节点一致性Hash实例用于计算KEY所分布的节点
+            </summary>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.Initialize(YQTrackV6.SentinelRedis.Config.RedisConfig)">
+            <summary>
+            重置连接
+            </summary>
+            <param name="redisConfig">连接字符串</param>
+            <exception cref="T:System.ArgumentNullException">configuration is null</exception>
+            <exception cref="T:System.ArgumentException">configuration is empty</exception>
+            <returns>是否重新连接</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.GetRedisConnection(System.String)">
+            <summary>
+            获取连接
+            </summary>
+            <param name="key">key</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.DefaultDataBase(System.String)">
+            <summary>
+            获取Database
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.KeyExpire(System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            设置缓存Key的过期时间
+            </summary>
+            <param name="key">Key</param>
+            <param name="expiry">过期时间</param>
+            <returns>返回是否设置成功</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.KeyTTL(System.String)">
+            <summary>
+            获取缓存Key的剩余的过期时间(单位:秒)
+            </summary>
+            <param name="key">Key</param>
+            <returns>
+            0~:剩余过期时间
+            -1:无过期时间
+            -2:Key不存在
+            </returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.KeyTTL(System.String,System.Boolean)">
+            <summary>
+            获取缓存Key的剩余的过期时间(单位:秒)
+            </summary>
+            <param name="key">Key</param>
+            <param name="isFromMaster">是否在主机操作</param>
+            <returns>
+            0~:剩余过期时间
+            -1:无过期时间
+            -2:Key不存在
+            </returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.KeyDelete(System.String)">
+            <summary>
+            删除Key
+            </summary>
+            <param name="key">Key名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.HashDelete(System.String,System.String)">
+            <summary>
+            删除Hash的属性字段
+            </summary>
+            <param name="key">缓存KEY</param>
+            <param name="field">Hash的属性字段</param>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.StringSet(System.String,System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            设置String类型缓存
+            </summary>
+            <param name="key">缓存键</param>
+            <param name="value">缓存值</param>
+            <param name="expiry">过期时间,无过期时间可以不传(默认null)</param>
+            <returns>设置是否成功</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.StringGet(System.String)">
+            <summary>
+            获取String类型缓存值
+            </summary>
+            <param name="key">缓存键</param>
+            <returns>获取String对象key的缓存值</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.StringGet(System.String,System.Boolean)">
+            <summary>
+            获取String类型缓存值
+            </summary>
+            <param name="key">缓存键</param>
+            <param name="isFromMaster">是否在主机操作</param>
+            <returns>获取String对象key的缓存值</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.StringDecrement(System.String,System.Int64,System.Nullable{System.TimeSpan})">
+            <summary>
+            递减
+            </summary>
+            <param name="key">缓存键</param>
+            <param name="value">递减值</param>
+             <param name="expiry">过期时间</param>
+            <returns>递减后的新值</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.StringIncrement(System.String,System.Int64,System.Nullable{System.TimeSpan})">
+            <summary>
+            递增
+            </summary>
+            <param name="key">缓存键</param>
+            <param name="value">递减值</param>
+            <param name="expiry">过期时间</param>
+            <returns>递增后的新值</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.HashGet(System.String,System.String[])">
+            <summary>
+            读取HashKey的指定字段的值
+            </summary>
+            <param name="hashKey">所需要操作的Hash Key</param>
+            <param name="fields">所取的Hash对象字段列表</param>
+            <returns>返回字典</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.HashGet(System.String,System.String[],System.Boolean)">
+            <summary>
+            读取HashKey的指定字段的值
+            </summary>
+            <param name="hashKey">所需要操作的Hash Key</param>
+            <param name="fields">所取的Hash对象字段列表</param>
+            <param name="isFromMaster">是否在主机操作</param>
+            <returns>返回字典</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.HashGet(System.String)">
+            <summary>
+            读取HashKey的所有字段的值
+            </summary>
+            <param name="hashKey">所需要操作的Hash Key</param>
+            <returns>返回字典</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.HashGet(System.String,System.Boolean)">
+            <summary>
+            读取HashKey的所有字段的值
+            </summary>
+            <param name="hashKey">所需要操作的Hash Key</param>
+            <param name="isFromMaster">是否在主机操作</param>
+            <returns>返回字典</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.HashSet(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Nullable{System.TimeSpan})">
+            <summary>
+            设置Redis Hash对象的字段值
+            </summary>
+            <param name="hashKey">所需要操作的Hash Key</param>
+            <param name="fieldValues">要写入的字段值映射表</param>
+            <param name="expiry">过期时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.HashSet(System.Tuple{System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}}[],System.Nullable{System.TimeSpan})">
+            <summary>
+            设置Redis Hash对象的字段值
+            </summary>
+            <param name="values">所需要操作的Hash Key和哈希表</param>
+            <param name="expiry">过期时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.HashDecrement(System.String,System.String,System.Int64)">
+            <summary>
+            递减
+            </summary>
+            <param name="key">缓存键</param>
+            <param name="hashField">哈希字段名称</param>
+            <param name="value">递减值</param>
+            <returns>递减后的新值</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.HashIncrement(System.String,System.String,System.Int64)">
+            <summary>
+            递增
+            </summary>
+            <param name="key">缓存键</param>
+            <param name="hashField">哈希字段名称</param>
+            <param name="value">递减值</param>
+            <returns>递增后的新值</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.ListDequeue(System.String)">
+            <summary>
+            移除并返回位于队列头部的对象
+            </summary>
+            <param name="key">队列的名称</param>
+            <returns>String</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.ListEnqueue(System.String,System.String)">
+            <summary>
+            将对象添加到队列的尾部
+            </summary>
+            <param name="key">队列的名称</param>
+            <param name="value">String</param>
+            <returns>当前队列长度</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.ScriptEvaluate(System.String,System.String,StackExchange.Redis.RedisKey[],StackExchange.Redis.RedisValue[])">
+            <summary>
+            执行脚本
+            </summary>
+            <param name="shardKey">用于分片的KEY</param>
+            <param name="luaScript">脚本</param>
+            <param name="keys">keys</param>
+            <param name="values">values</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.ScriptEvaluate(System.String,System.String,StackExchange.Redis.RedisKey[],StackExchange.Redis.RedisValue[],System.Boolean)">
+            <summary>
+            执行脚本
+            </summary>
+            <param name="shardKey">用于分片的KEY</param>
+            <param name="luaScript">脚本</param>
+            <param name="keys">keys</param>
+            <param name="values">values</param>
+            <param name="isFromMaster">是否在主机操作</param>
+            <returns>返回执行结果</returns>
+        </member>
+        <member name="M:YQTrackV6.SentinelRedis.SentinelRedisControler.ScriptEvaluatePrivate(System.String,System.String,StackExchange.Redis.CommandFlags,StackExchange.Redis.RedisKey[],StackExchange.Redis.RedisValue[])">
+            <summary>
+            执行脚本
+            </summary>
+            <param name="shardKey">用于分片的KEY</param>
+            <param name="luaScript">脚本</param>
+            <param name="flag">Redis指令选项</param>
+            <param name="keys">Lua脚本用到的KEYS</param>
+            <param name="values">Lua脚本用到的VALUES</param>
+            <returns>返回执行结果</returns>
+        </member>
+    </members>
+</doc>

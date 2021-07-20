@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YQTrack.Backend.Message.RabbitMQHelper</name>
+    </assembly>
+    <members>
+        <member name="T:YQTrack.Backend.Message.RabbitMQHelper.LogDefine">
+            <summary>
+                日志信息定义
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.RabbitMQHelper.LogDefine.LogError">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.RabbitMQHelper.LogDefine.LogWarn">
+            <summary>
+            Warn
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.RabbitMQHelper.LogDefine.LogVerbose">
+            <summary>
+            Verbose
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Message.RabbitMQHelper.MessageHelper">
+            <summary>
+            消息发送帮助库
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.RabbitMQHelper.MessageHelper.IsInit">
+            <summary>
+            是否已初始化
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.Message.RabbitMQHelper.MessageHelper.Init(YQTrackV6.RabbitMQ.Config.RabbitMqConfig)">
+            <summary>
+            初始化
+            </summary>
+            <param name="rabbitMqConfig"></param>
+        </member>
+        <member name="M:YQTrack.Backend.Message.RabbitMQHelper.MessageHelper.SendMessage(YQTrack.Backend.Message.Model.Models.MessageModel)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="model">消息模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:YQTrack.Backend.Message.RabbitMQHelper.MessageHelper.SendCallback(YQTrack.Backend.Message.Model.Models.SendCallbackModel)">
+            <summary>
+            发送消息(推送与邮件回调使用)
+            </summary>
+            <param name="model">消息模型</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,664 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YQTrack.Backend.Message.Model</name>
+    </assembly>
+    <members>
+        <member name="T:YQTrack.Backend.Message.Model.Enums.ChannelSend">
+            <summary>
+            发送渠道
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.ChannelSend.APP">
+            <summary>
+            APP
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.ChannelSend.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.ChannelSend.SiteMessage">
+            <summary>
+            站内信
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Message.Model.Enums.RabbitMQType">
+            <summary>
+            创建消息队列的类型
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.RabbitMQType.Empty">
+            <summary>
+            全部不创建
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.RabbitMQType.ALL">
+            <summary>
+            全部创建
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.RabbitMQType.Message">
+            <summary>
+            创建Message路由下的队列
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.RabbitMQType.MessageCallBack">
+            <summary>
+            创建MessageCallBack路由下的队列
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.RabbitMQType.user_email">
+            <summary>
+            创建user.email路由下的队列
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Message.Model.Enums.MessageTemplateType">
+            <summary>
+            消息模板
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.TrackNoUpdata">
+            <summary>
+            所属：BUYER 
+            渠道：APP
+            模版名称：单号物流信息更新
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.CanTrackNum">
+            <summary>
+            所属：SELLER
+            渠道：email
+            模版名称：可用追踪输不足
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.AutoProcessNotice">
+            <summary>
+            所属：SELLER
+            渠道：email
+            模版名称：自动处理通知(场景:自动完成或归档)
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.TrackNoError">
+            <summary>
+            所属：SELLER
+            渠道：email
+            模版名称：订单异常提示（场景:多少天未更新，多少天未妥投）
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.BindShop">
+            <summary>
+            绑定店铺提醒
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.RegVerificationCode">
+            <summary>
+            所属：USER
+            渠道：email
+            模版名称：注册邮件验证码
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.ForgotPassword">
+            <summary>
+            所属：USER
+            渠道：email
+            模版名称：找回密码邮件验证码
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.OAuthBindEmailCode">
+            <summary>
+            所属：USER
+            渠道：email
+            模版名称：第三方登录绑定邮箱邮件验证码
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.RegAccountSuccess">
+            <summary>
+            所属：USER
+            渠道：email
+            模版名称：注册成功邮件
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.RoleSetSuccess">
+            <summary>
+            所属：Seller 
+            渠道：SiteMessage
+            模版名称：设置角色成功免费送100查询数
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.SiteMessagePickUp">
+            <summary>
+            所属：BUYER
+            渠道：SiteMessage
+            模版名称：到达待取-提醒
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.SiteMessageAlert">
+            <summary>
+            所属：BUYER
+            渠道：SiteMessage
+            模版名称：可能异常-提醒
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.SiteMessageDelivered">
+            <summary>
+            所属：BUYER
+            渠道：SiteMessage
+            模版名称：投递成功-提醒
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.SiteMessageUndelivered">
+            <summary>
+            所属：BUYER
+            渠道：SiteMessage
+            模版名称：投递失败-提醒
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.SiteMessageInTransit">
+            <summary>
+            所属：BUYER
+            渠道：SiteMessage
+            模版名称：运输途中-提醒
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.EmailPackageInformation">
+            <summary>
+            所属：Seller 
+            渠道：Email
+            模版名称：包裹综合信息统计
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.SiteMessageBindShop">
+            <summary>
+            所属：Seller 
+            渠道：SiteMessage
+            模版名称：绑定店铺成功
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.SiteMessageSynchroTrackNo">
+            <summary>
+            所属：Seller 
+            渠道：SiteMessage
+            模版名称：绑定店铺同步单号成功
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.SiteMessageShopInvalid">
+            <summary>
+            所属：Seller 
+            渠道：SiteMessage
+            模版名称：店铺失效提醒
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.ChangeEmailOldCode">
+            <summary>
+            所属：USER
+            渠道：email
+            模版名称：修改邮件地址发送给旧邮箱的邮件
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.RegAccountOAuthSuccesss">
+            <summary>
+            所属：USER
+            渠道：email
+            模版名称：第三方注册自动注册成功邮件
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.UserMemberGoingToExpiredWarn">
+            <summary>
+            所属：BUYER
+            渠道：email
+            模版名称：你的会员即将过期
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.UserMemberExpiredWarn">
+            <summary>
+            所属：BUYER
+            渠道：email
+            模版名称：你的会员已经过期
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.UserMemberPurchaseSuccess">
+            <summary>
+            所属：BUYER
+            渠道：email
+            模版名称：你的会员购买成功
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.ValidComplaintToInformant">
+            <summary>
+            所属：FREIGHT
+            渠道：email
+            模版名称：有效投诉通知举报人
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.ChannelAboutToExpire">
+            <summary>
+            所属：FREIGHT
+            渠道：email
+            模版名称：渠道即将过期
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.ValidComplaintToTransporter">
+            <summary>
+            所属：FREIGHT
+            渠道：email
+            模版名称：有效投诉通知运输商邮件
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.CarrierVerifyPass">
+            <summary>
+            所属：CARRIER
+            渠道：email
+            模版名称：审核通过模版
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.CarrierVerifyNoPass">
+            <summary>
+            所属：CARRIER
+            渠道：email
+            模版名称：审核不通过模版
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.CarrierToVerify">
+            <summary>
+            所属：CARRIER
+            渠道：email
+            模版名称：通知审核模版
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.SellerBuySuccess">
+            <summary>
+            所属：SELLER
+            渠道：email
+            模版名称：购买成功
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.SellerLimitInsufficient">
+            <summary>
+            所属：SELLER
+            渠道：email
+            模版名称：查询额度小于10%
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.SellerQuotaBuySuccess">
+            <summary>
+            所属：SELLER
+            渠道：email
+            模版名称：邮件额度购买成功
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.SellerQuotaInsufficient">
+            <summary>
+            所属：SELLER
+            渠道：email
+            模版名称：邮件额度预警
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.BuyerOrderInformationMatching">
+            <summary>
+            所属：Buyer
+            渠道：SiteMessage
+            模版名称：Buyer单号信息验证
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.SellerShopAboutToExpire">
+            <summary>
+            所属：Seller
+            渠道：email
+            模版名称：Seller新增店铺即将过期提醒
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.BuyerAccountNotExist">
+            <summary>
+            所属：Buyer
+            渠道：email
+            模版名称：帐号不存在
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.BuyerNoSingleNumberFound">
+            <summary>
+            所属：Buyer
+            渠道：email
+            模版名称：找不到单号
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.BuyerSingleNumberAdded">
+            <summary>
+            所属：Buyer
+            渠道：email
+            模版名称：单号已添加
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.BuyerSearchLimitInsufficient">
+            <summary>
+            所属：Buyer
+            渠道：email
+            模版名称：查询额度不足
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.BuyerRelevantAccountVerNum">
+            <summary>
+            所属：Buyer
+            渠道：email
+            模版名称：关联帐号验证码
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.UserRiskManagementCode">
+            <summary>
+            所属：User
+            渠道：email
+            模版名称：风控验证码
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.FreightForcedOff">
+            <summary>
+            所属：Freight
+            渠道：email
+            模版名称：询价被下架
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.FreightMailNewfreight">
+            <summary>
+            所属：Freight
+            渠道：email
+            模版名称：有新报价
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.FreightSuccessfulBidding">
+            <summary>
+            所属：Freight
+            渠道：email
+            模版名称：成功被选中
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.FreightFailBidding">
+            <summary>
+            所属：Freight
+            渠道：SiteMessage
+            模版名称：竞价失败
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.FreightForcedOffSiteMessage">
+            <summary>
+            所属：Freight
+            渠道：SiteMessage
+            模版名称：询价被下架
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.FreightCancel">
+            <summary>
+            所属：Freight
+            渠道：SiteMessage
+            模版名称：撤销竞价
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.FreightInquiryCancel">
+            <summary>
+            所属：Freight
+            渠道：SiteMessage
+            模版名称：撤销询价
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.FreightNewFreight">
+            <summary>
+            所属：Freight
+            渠道：SiteMessage
+            模版名称：有新竞价
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.FreightSuccessfulBiddingSiteMessage">
+            <summary>
+            所属：Freight
+            渠道：SiteMessage
+            模版名称：成功被选中
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.FreightEToBeSelect">
+            <summary>
+            所属：Freight
+            渠道：email
+            模版名称：待选择
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.FreightSToBeSelect">
+            <summary>
+            所属：Freight
+            渠道：SiteMessage
+            模版名称：待选择
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.PublicVerificationCode">
+            <summary>
+            所属：PUBLIC
+            渠道：email
+            模版名称：待选择
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.ApiUserRegister">
+            <summary>
+            所属：API
+            渠道：email
+            模版名称：API用户注册邮件
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.ApiQuotaUseupSoon">
+            <summary>
+            所属：API
+            渠道：email
+            模版名称：API额度即将用尽邮件
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.ApiQuotaUsedup">
+            <summary>
+            所属：API
+            渠道：email
+            模版名称：API额度用尽邮件
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.InvoiceApplyPass">
+            <summary>
+            所属：USER
+            渠道：email
+            模版名称：发票申请审核通过
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.InvoiceApplyReject">
+            <summary>
+            所属：USER
+            渠道：email
+            模版名称：发票申请驳回
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.OfflinePaymentPass">
+            <summary>
+            所属：USER
+            渠道：email
+            模版名称：线下交易审核通过
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.OfflinePaymentReject">
+            <summary>
+            所属：USER
+            渠道：email
+            模版名称：线下交易驳回
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.OfflinePaySubmit">
+            <summary>
+            所属：USER
+            渠道：email
+            模版名称：线下交易提交
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.InvoiceSubmit">
+            <summary>
+            所属：USER
+            渠道：email
+            模版名称：发票申请提交
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.WebhookPushErrorWarning">
+            <summary>
+            所属：API
+            渠道：email
+            模版名称：剩余额度预警通知
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.RemainQuotaWarning">
+            <summary>
+            所属：API
+            渠道：email
+            模版名称：连续推送错误通知
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.MessageTemplateType.CommonTemplate">
+            <summary>
+            通用模板
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Message.Model.Enums.SiteMessageState">
+            <summary>
+            站内信状态
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.SiteMessageState.ALL">
+            <summary>
+            全部数据
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.SiteMessageState.Unread">
+            <summary>
+            未读
+            </summary>
+        </member>
+        <member name="F:YQTrack.Backend.Message.Model.Enums.SiteMessageState.IsRead">
+            <summary>
+            已读
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Message.Model.Models.MessageModel">
+            <summary>
+            发送消息实体
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.MessageModel.MessageType">
+            <summary>
+            消息模板类型
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.MessageModel.TemplateData">
+            <summary>
+            模板需要填充的数据源(JSON格式)
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.MessageModel.UserId">
+            <summary>
+            用户登录信息
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.MessageModel.SendTaskId">
+            <summary>
+            发送任务ID(手动任务专用)
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.MessageModel.TransmitDataJson">
+            <summary>
+            MSG只负责传递的数据
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Message.Model.Models.UserInfoExt">
+            <summary>
+            用户登录信息(扩展出token推送参数)
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.UserInfoExt.Token">
+            <summary>
+            推送token(推送专用)
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.UserInfoExt.PushProvider">
+            <summary>
+            推送供应服务商
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.UserInfoExt.FUserDeviceId">
+            <summary>
+            APP推送的设备ID
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Message.Model.Models.SendCallbackModel">
+            <summary>
+            推送或邮件的 发送回调消息实体
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.SendCallbackModel.ESID">
+            <summary>
+            ESID
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.SendCallbackModel.Model">
+            <summary>
+            源数据
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.SendCallbackModel.ChannelType">
+            <summary>
+            渠道类型
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.SendCallbackModel.TemplateType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.SendCallbackModel.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.SendCallbackModel.ErrorReason">
+            <summary>
+            异常原因
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.SendCallbackModel.EndDateTime">
+            <summary>
+            发送结束时间
+            </summary>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.Models.SendCallbackModel.Provider">
+            <summary>
+            邮件渠道(邮件专用)
+            </summary>
+        </member>
+        <member name="T:YQTrack.Backend.Message.Model.RemarkAttribute">
+            <summary>  
+            备注特性  
+            </summary>  
+        </member>
+        <member name="M:YQTrack.Backend.Message.Model.RemarkAttribute.#ctor(YQTrack.Backend.Message.Model.Enums.RabbitMQType)">
+            <summary>
+            
+            </summary>
+            <param name="remark"></param>
+        </member>
+        <member name="P:YQTrack.Backend.Message.Model.RemarkAttribute.Remark">
+            <summary>  
+            备注  
+            </summary>  
+        </member>
+        <member name="T:YQTrack.Backend.Message.Model.RabbitMQEnumHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:YQTrack.Backend.Message.Model.RabbitMQEnumHelper.GetRemark(System.Enum)">
+            <summary>  
+            获取枚举的备注信息  
+            </summary>  
+            <param name="em"></param>  
+            <returns></returns>  
+        </member>
+    </members>
+</doc>
